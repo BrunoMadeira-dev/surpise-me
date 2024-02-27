@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var welcomeLbl: CLTypingLabel!
+    @IBOutlet weak var startBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        welcomeLbl.text = "Surprise me"
+        startBtn.layer.cornerRadius = 20
     }
 
-
+    @IBAction func startPressed(_ sender: Any) {
+        
+    }
+    
 }
 

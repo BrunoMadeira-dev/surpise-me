@@ -1,0 +1,6 @@
+framework module Pods_Surprise_Me_Surprise_MeUITests {
+  umbrella header "Pods-Surprise Me-Surprise MeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
