@@ -24,9 +24,10 @@ class ChooseViewController: UIViewController {
         foodBtn.layer.cornerRadius = 10
         boredBtn.layer.cornerRadius = 10
         
-        movieBtn.titleLabel?.text = "Wich Movie?"
-        foodBtn.titleLabel?.text = "What to eat?"
-        boredBtn.titleLabel?.text = "What to do?"
+        movieBtn.setTitle("Wich movie?", for: [])
+        foodBtn.setTitle("What to eat?", for: [])
+        boredBtn.setTitle("What to do?", for: [])
     }
+    
     
 }

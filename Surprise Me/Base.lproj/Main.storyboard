@@ -52,7 +52,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iav-aC-uc4"/>
+                                    <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10R-bV-Sse"/>
                                     <segue destination="VYS-Vd-kDp" kind="show" id="n0F-xN-laK"/>
                                 </connections>
                             </button>
@@ -87,37 +87,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZVV-LT-gjn">
-                                <rect key="frame" x="70" y="325" width="253" height="143"/>
+                                <rect key="frame" x="70" y="325" width="253" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhY-Ca-VwV">
-                                        <rect key="frame" x="0.0" y="0.0" width="253" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="14"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="1x5-UR-tXL"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umn-bM-2jV">
-                                        <rect key="frame" x="0.0" y="54.333333333333314" width="253" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="34" width="253" height="14"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="07Q-PY-0Mh"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esF-J0-KdD">
-                                        <rect key="frame" x="0.0" y="108.66666666666669" width="253" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="68" width="253" height="14"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kWg-GG-mp2"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                     </button>
                                 </subviews>
                                 <constraints>
