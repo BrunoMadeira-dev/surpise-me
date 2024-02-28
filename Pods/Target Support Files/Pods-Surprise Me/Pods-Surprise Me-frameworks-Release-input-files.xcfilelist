@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Surprise Me/Pods-Surprise Me-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CLTypingLabel/CLTypingLabel.framework

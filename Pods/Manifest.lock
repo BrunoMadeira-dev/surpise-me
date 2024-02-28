@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.8.1)
   - CLTypingLabel (0.4.0)
 
 DEPENDENCIES:
+  - Alamofire
   - CLTypingLabel
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CLTypingLabel
 
 SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
 
-PODFILE CHECKSUM: cfa087c3e7665347c336e10ec787d9c44031b9ca
+PODFILE CHECKSUM: b37dac8eab27549f1095fdb4950e6aff9b89d572
 
 COCOAPODS: 1.14.3

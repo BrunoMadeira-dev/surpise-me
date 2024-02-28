@@ -7,13 +7,17 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class ChooseViewController: UIViewController {
     
     @IBOutlet weak var movieBtn: UIButton!
     @IBOutlet weak var foodBtn: UIButton!
     @IBOutlet weak var boredBtn: UIButton!
+     
+    let networker = NetworkingCall()
     
+    let url = "https://corporatebs-generator.sameerkumar.website/"
     
     override func viewDidLoad() {
         styleUI()
@@ -29,5 +33,11 @@ class ChooseViewController: UIViewController {
         boredBtn.setTitle("What to do?", for: [])
     }
     
+    @IBAction func movieBtnPressed(_ sender: Any) {
+        
+        networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
+            print(response??.phrase)
+        }
+    }
     
 }
