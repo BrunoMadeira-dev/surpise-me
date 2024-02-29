@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBarAppearance key="standardAppearance"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nEE-Fu-cZ9"/>
@@ -82,7 +83,7 @@
         <scene sceneID="CFH-PF-bjx">
             <objects>
                 <viewController id="VYS-Vd-kDp" customClass="ChooseViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yQO-YX-I9q">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="yQO-YX-I9q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -100,6 +101,7 @@
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="movieBtnPressed:" destination="VYS-Vd-kDp" eventType="touchUpInside" id="ks0-0L-fls"/>
+                                            <segue destination="qMZ-K2-CMY" kind="show" id="5cC-ln-Dsk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umn-bM-2jV">
@@ -152,6 +154,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6q-Mi-Gy2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1007" y="4"/>
+        </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="ks9-Lf-DRa">
+            <objects>
+                <viewController id="qMZ-K2-CMY" customClass="MovieViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gTU-od-3CM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLl-sJ-uKY">
+                                <rect key="frame" x="120" y="355" width="153" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YC-dC-YsM">
+                                <rect key="frame" x="120" y="419" width="153" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="qMZ-K2-CMY" eventType="touchUpInside" id="FLl-41-pyU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N4c-Qd-2bo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LLl-sJ-uKY" firstAttribute="leading" secondItem="N4c-Qd-2bo" secondAttribute="leading" constant="120" id="3kf-xE-D0C"/>
+                            <constraint firstItem="9YC-dC-YsM" firstAttribute="leading" secondItem="N4c-Qd-2bo" secondAttribute="leading" constant="120" id="BtZ-IL-L1m"/>
+                            <constraint firstItem="N4c-Qd-2bo" firstAttribute="trailing" secondItem="LLl-sJ-uKY" secondAttribute="trailing" constant="120" id="Hd4-3p-gTN"/>
+                            <constraint firstItem="LLl-sJ-uKY" firstAttribute="top" secondItem="N4c-Qd-2bo" secondAttribute="top" constant="252" id="qoW-c2-fot"/>
+                            <constraint firstItem="9YC-dC-YsM" firstAttribute="top" secondItem="LLl-sJ-uKY" secondAttribute="bottom" constant="30" id="roV-x3-vTl"/>
+                            <constraint firstItem="N4c-Qd-2bo" firstAttribute="trailing" secondItem="9YC-dC-YsM" secondAttribute="trailing" constant="120" id="sdS-6D-7Il"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gEO-dV-Pnp"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="LLl-sJ-uKY" id="LxE-LT-92m"/>
+                        <outlet property="searchCategoryBtn" destination="9YC-dC-YsM" id="eFu-Tj-VH8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QpJ-AU-47x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2042" y="-518"/>
         </scene>
     </scenes>
     <resources>

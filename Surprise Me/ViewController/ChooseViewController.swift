@@ -33,11 +33,17 @@ class ChooseViewController: UIViewController {
         boredBtn.setTitle("What to do?", for: [])
     }
     
-    @IBAction func movieBtnPressed(_ sender: Any) {
-        
+    func getPhrases() {
         networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
-            print(response??.phrase)
+            
+            if let responseNew = response??.phrase {
+                print(responseNew)
+            }
         }
+    }
+    
+    @IBAction func movieBtnPressed(_ sender: Any) {
+        getPhrases()
     }
     
 }
