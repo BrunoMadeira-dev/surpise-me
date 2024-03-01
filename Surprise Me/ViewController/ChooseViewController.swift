@@ -17,7 +17,8 @@ class ChooseViewController: UIViewController {
      
     let networker = NetworkingCall()
     
-    let url = "https://corporatebs-generator.sameerkumar.website/"
+    //MARK: take this url
+    let url = "https://corporatebs-generator.sameerkumar.website/" //mock url jus to test
     
     override func viewDidLoad() {
         styleUI()
@@ -33,9 +34,9 @@ class ChooseViewController: UIViewController {
         boredBtn.setTitle("What to do?", for: [])
     }
     
+    //TODO: Remove this function
     func getPhrases() {
         networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
-            
             if let responseNew = response??.phrase {
                 print(responseNew)
             }
