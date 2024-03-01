@@ -15,7 +15,7 @@ class MealDataModel: Codable {
 
 class MealsRecipesDataModel: Codable {
     
-    var idMeal: String?
+    var strMeasure1idMeal: String?
     var strMeal: String?
     var strDrinkAlternate: String?
     var strCategory: String?

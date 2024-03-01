@@ -183,7 +183,7 @@
                                 <rect key="frame" x="0.0" y="201.33333333333331" width="393" height="616.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4N-K6-DFV">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1774.6666666666667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k5p-3n-puh">
                                                 <rect key="frame" x="20" y="20" width="373" height="1754.6666666666667"/>
@@ -457,10 +457,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="k5p-3n-puh" secondAttribute="bottom" id="Aba-j9-hud"/>
                                             <constraint firstItem="k5p-3n-puh" firstAttribute="leading" secondItem="L4N-K6-DFV" secondAttribute="leading" constant="20" id="CG5-il-Yur"/>
                                             <constraint firstItem="k5p-3n-puh" firstAttribute="top" secondItem="L4N-K6-DFV" secondAttribute="top" constant="20" symbolic="YES" id="JQb-8U-D8n"/>
                                             <constraint firstAttribute="trailing" secondItem="k5p-3n-puh" secondAttribute="trailing" id="L8A-De-1nu"/>
-                                            <constraint firstAttribute="height" constant="1000" id="OcB-kd-lpg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -497,11 +497,50 @@
                         <outlet property="foodInstructLbl" destination="PS7-G2-t9B" id="2gk-LS-CI6"/>
                         <outlet property="foodTextField" destination="muE-L2-KoA" id="LaX-xB-syS"/>
                         <outlet property="foodTitleLbl" destination="eUQ-jF-yyP" id="t2F-GC-cqd"/>
+                        <outlet property="scrollView" destination="ILu-yi-Fly" id="Akl-ut-9mk"/>
                         <outlet property="searchFoodBtn" destination="ZTe-fn-JVT" id="5rw-vQ-cwR"/>
                         <outlet property="stackView" destination="k5p-3n-puh" id="QkK-wT-rJy"/>
+                        <outlet property="strIngred10Lbl" destination="Jf6-wv-oYc" id="ld6-kE-1fX"/>
+                        <outlet property="strIngred11Lbl" destination="SZp-Dk-buz" id="shm-gp-9w9"/>
+                        <outlet property="strIngred12Lbl" destination="rKo-uT-Zof" id="FBX-Ph-MBZ"/>
+                        <outlet property="strIngred13Lbl" destination="6rd-Tp-6UO" id="UvZ-I1-07B"/>
+                        <outlet property="strIngred14Lbl" destination="M1B-St-Snr" id="c2W-Rz-qjK"/>
+                        <outlet property="strIngred15Lbl" destination="0xH-mw-obA" id="4LD-RL-BfG"/>
+                        <outlet property="strIngred16Lbl" destination="LwY-wC-qLS" id="tks-NT-mTf"/>
+                        <outlet property="strIngred17Lbl" destination="Ogr-Ux-MVh" id="zta-25-fwu"/>
+                        <outlet property="strIngred18Lbl" destination="BTC-iM-Qhs" id="36g-GA-nbe"/>
+                        <outlet property="strIngred19Lbl" destination="8WD-Bz-Sv8" id="jdc-1x-XYX"/>
                         <outlet property="strIngred1Lbl" destination="E9w-eJ-U6g" id="rzc-eg-MVs"/>
+                        <outlet property="strIngred20Lbl" destination="4Qa-a6-qzl" id="Np3-El-A93"/>
                         <outlet property="strIngred2Lbl" destination="EEb-xD-5nl" id="U71-6l-LwO"/>
                         <outlet property="strIngred3Lbl" destination="7wb-1q-G9e" id="zmR-OB-xZQ"/>
+                        <outlet property="strIngred4Lbl" destination="m4a-2Z-LF1" id="DZG-Gv-GVy"/>
+                        <outlet property="strIngred5Lbl" destination="zEi-QV-RrD" id="HpJ-J8-hDH"/>
+                        <outlet property="strIngred6Lbl" destination="4Np-Wi-Lux" id="0K3-D9-NAO"/>
+                        <outlet property="strIngred7Lbl" destination="wbb-Li-92l" id="RgP-0Q-LvI"/>
+                        <outlet property="strIngred8Lbl" destination="n3h-ka-MmR" id="Wlj-8k-eEe"/>
+                        <outlet property="strIngred9Lbl" destination="xka-I4-nLD" id="mET-SC-V3Y"/>
+                        <outlet property="strMeasure10Lbl" destination="iXE-06-1WQ" id="zYC-4F-2Cz"/>
+                        <outlet property="strMeasure11Lbl" destination="0yB-Va-gBB" id="mZe-5Y-Rhe"/>
+                        <outlet property="strMeasure12Lbl" destination="OCa-Ha-Xjc" id="qH2-Tr-9aK"/>
+                        <outlet property="strMeasure13Lbl" destination="pei-MI-6PS" id="Tiz-TS-bYX"/>
+                        <outlet property="strMeasure14Lbl" destination="E3F-7S-Hcu" id="KKW-ny-2YC"/>
+                        <outlet property="strMeasure15Lbl" destination="QSY-Zq-xiU" id="qa5-9A-Otd"/>
+                        <outlet property="strMeasure16Lbl" destination="i7e-9n-qC2" id="mSz-Wo-v6y"/>
+                        <outlet property="strMeasure17Lbl" destination="cCD-Kj-dY5" id="xlQ-Zn-gBS"/>
+                        <outlet property="strMeasure18Lbl" destination="vtA-yT-X38" id="nfL-S0-pj2"/>
+                        <outlet property="strMeasure19Lbl" destination="txE-0F-qnL" id="gcI-mW-XzE"/>
+                        <outlet property="strMeasure1Lbl" destination="3Ex-ew-gKe" id="CVd-NV-Lfi"/>
+                        <outlet property="strMeasure20Lbl" destination="Jxg-Hc-TTR" id="CJg-IJ-Im7"/>
+                        <outlet property="strMeasure2Lbl" destination="Zz0-YB-XBi" id="iTO-qx-BKT"/>
+                        <outlet property="strMeasure3Lbl" destination="mmm-Np-Ote" id="Nmk-W9-dkj"/>
+                        <outlet property="strMeasure4Lbl" destination="7K0-ot-Ljc" id="b6i-z0-3b5"/>
+                        <outlet property="strMeasure5Lbl" destination="D2o-g3-6C5" id="AWN-gj-AZw"/>
+                        <outlet property="strMeasure6Lbl" destination="eu2-yq-bYE" id="TuN-jD-cyk"/>
+                        <outlet property="strMeasure7Lbl" destination="1u2-bC-Qzc" id="b35-rM-GA6"/>
+                        <outlet property="strMeasure8Lbl" destination="ZDJ-Td-jyg" id="ywu-dN-Cac"/>
+                        <outlet property="strMeasure9Lbl" destination="cBa-h9-D6J" id="6kL-gl-kTx"/>
+                        <outlet property="uiViewFood" destination="L4N-K6-DFV" id="KaA-9c-VDe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMT-5O-a7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
