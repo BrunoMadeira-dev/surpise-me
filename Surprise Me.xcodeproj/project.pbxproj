@@ -24,6 +24,7 @@
 		54D62D4F2B91178400AE21BD /* MealDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D4E2B91178400AE21BD /* MealDataModel.swift */; };
 		54D62D512B91195F00AE21BD /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D502B91195F00AE21BD /* FoodViewController.swift */; };
 		54D62D532B91FB7400AE21BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D522B91FB7300AE21BD /* Constants.swift */; };
+		54D62D572B93BEE800AE21BD /* FoodDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D562B93BEE800AE21BD /* FoodDataManager.swift */; };
 		9BAA17CC916C2EC98ED3D1D1 /* Pods_Surprise_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C56C6B9E4672ACFF0E3B6E7 /* Pods_Surprise_Me.framework */; };
 		BC4574EC55375D7ACB131479 /* Pods_Surprise_Me_Surprise_MeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3CC363438FCB6998C34FC /* Pods_Surprise_Me_Surprise_MeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		54D62D4E2B91178400AE21BD /* MealDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataModel.swift; sourceTree = "<group>"; };
 		54D62D502B91195F00AE21BD /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		54D62D522B91FB7300AE21BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		54D62D562B93BEE800AE21BD /* FoodDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDataManager.swift; sourceTree = "<group>"; };
 		671E3FEF3872691A2C775E96 /* Pods-Surprise Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me.debug.xcconfig"; path = "Target Support Files/Pods-Surprise Me/Pods-Surprise Me.debug.xcconfig"; sourceTree = "<group>"; };
 		76FB7FAB61BF853F6D12B558 /* Pods-Surprise Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise Me.release.xcconfig"; path = "Target Support Files/Pods-Surprise Me/Pods-Surprise Me.release.xcconfig"; sourceTree = "<group>"; };
 		7C56C6B9E4672ACFF0E3B6E7 /* Pods_Surprise_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surprise_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 		54D62D432B8FAE9B00AE21BD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				54D62D552B93BEC500AE21BD /* DataManager */,
 				54D62D442B8FAEB200AE21BD /* NetworkingCall.swift */,
 			);
 			path = Networking;
@@ -210,6 +213,14 @@
 				54D62D502B91195F00AE21BD /* FoodViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54D62D552B93BEC500AE21BD /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				54D62D562B93BEE800AE21BD /* FoodDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +469,7 @@
 				54D62D512B91195F00AE21BD /* FoodViewController.swift in Sources */,
 				54D62D532B91FB7400AE21BD /* Constants.swift in Sources */,
 				54D62D482B8FAF6C00AE21BD /* EnterpriseDataModel.swift in Sources */,
+				54D62D572B93BEE800AE21BD /* FoodDataManager.swift in Sources */,
 				54D62D122B8D2D2100AE21BD /* AppDelegate.swift in Sources */,
 				54D62D142B8D2D2100AE21BD /* SceneDelegate.swift in Sources */,
 				54D62D452B8FAEB200AE21BD /* NetworkingCall.swift in Sources */,
