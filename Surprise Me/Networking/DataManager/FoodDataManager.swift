@@ -13,7 +13,7 @@ class FoodDataManager{
     
     func fetchRandomFood(url: String, onComplete: @escaping (MealDataModel?, Error?) -> ()) {
         networCall.responseCall(url: url, responseType: MealDataModel.self) { responseObject, error in
-            var dataModel : MealDataModel?
+            var dataModel: MealDataModel?
             
             if let error = error {
                 print(error)
@@ -30,6 +30,19 @@ class FoodDataManager{
             if let safeData = data {
                 onComplete(data)
             }
+        }
+    }
+    
+    func fetchCategory(url: String, onComplete: @escaping (MealsCategoryDataModel?, Error?) -> ()) {
+        networCall.responseCall(url: url, responseType: MealsCategoryDataModel.self) { responseObject, error in
+            var dataModel: MealsCategoryDataModel?
+            
+            if let error = error {
+                print(error)
+            } else {
+                dataModel = responseObject
+            }
+            onComplete(dataModel, error)
         }
     }
 }

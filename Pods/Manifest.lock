@@ -1,12 +1,16 @@
 PODS:
   - Alamofire (5.8.1)
   - CLTypingLabel (0.4.0)
+  - Kingfisher (7.11.0)
 
 DEPENDENCIES:
   - Alamofire
   - CLTypingLabel
+  - Kingfisher
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Kingfisher
   trunk:
     - Alamofire
     - CLTypingLabel
@@ -14,7 +18,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
 
-PODFILE CHECKSUM: b37dac8eab27549f1095fdb4950e6aff9b89d572
+PODFILE CHECKSUM: f985a8edaa263ab30c3f715f67a58d2cb63e9566
 
 COCOAPODS: 1.14.3

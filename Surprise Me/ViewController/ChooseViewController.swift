@@ -35,7 +35,7 @@ class ChooseViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         
         movieBtn.isHidden = true
-        boredBtn.isHidden = true
+        boredBtn.isHidden = false
     }
     
     //TODO: Remove this function

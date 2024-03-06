@@ -25,7 +25,6 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     var mealArray: [MealsRecipesDataModel] = []
     var isLoaded: Bool = false
     var imageFinal = UIImage()
-    var finalImage = UIImage()
     
     override func viewDidLoad() {
         styleUI()
