@@ -93,18 +93,18 @@
         <scene sceneID="CFH-PF-bjx">
             <objects>
                 <viewController id="VYS-Vd-kDp" customClass="ChooseViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="yQO-YX-I9q">
+                    <view key="view" contentMode="scaleToFill" id="yQO-YX-I9q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZVV-LT-gjn">
-                                <rect key="frame" x="70" y="325" width="253" height="250"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZVV-LT-gjn">
+                                <rect key="frame" x="70" y="331" width="253" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhY-Ca-VwV">
-                                        <rect key="frame" x="0.0" y="0.0" width="253" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="253" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="1x5-UR-tXL"/>
+                                            <constraint firstAttribute="height" constant="50" id="1x5-UR-tXL"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -115,10 +115,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umn-bM-2jV">
-                                        <rect key="frame" x="0.0" y="90" width="253" height="70"/>
+                                        <rect key="frame" x="0.0" y="70" width="253" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="07Q-PY-0Mh"/>
+                                            <constraint firstAttribute="height" constant="50" id="07Q-PY-0Mh"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -128,10 +128,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esF-J0-KdD">
-                                        <rect key="frame" x="0.0" y="180" width="253" height="70"/>
+                                        <rect key="frame" x="0.0" y="140" width="253" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="kWg-GG-mp2"/>
+                                            <constraint firstAttribute="height" constant="50" id="kWg-GG-mp2"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -153,7 +153,7 @@
                         <constraints>
                             <constraint firstItem="ZVV-LT-gjn" firstAttribute="leading" secondItem="3cm-lc-dbb" secondAttribute="leading" constant="70" id="FQp-Kf-dUK"/>
                             <constraint firstItem="3cm-lc-dbb" firstAttribute="trailing" secondItem="ZVV-LT-gjn" secondAttribute="trailing" constant="70" id="Syi-oW-mxR"/>
-                            <constraint firstItem="ZVV-LT-gjn" firstAttribute="top" secondItem="3cm-lc-dbb" secondAttribute="top" constant="222" id="UJN-8k-t87"/>
+                            <constraint firstItem="ZVV-LT-gjn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3cm-lc-dbb" secondAttribute="top" constant="222" id="UJN-8k-t87"/>
                             <constraint firstItem="ZVV-LT-gjn" firstAttribute="centerY" secondItem="yQO-YX-I9q" secondAttribute="centerY" id="b2F-2e-uUO"/>
                         </constraints>
                     </view>

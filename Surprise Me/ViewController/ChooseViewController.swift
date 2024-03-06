@@ -33,19 +33,22 @@ class ChooseViewController: UIViewController {
         foodBtn.setTitle("What to eat?", for: [])
         boredBtn.setTitle("What to do?", for: [])
         navigationItem.backButtonTitle = ""
+        
+        movieBtn.isHidden = true
+        boredBtn.isHidden = true
     }
     
     //TODO: Remove this function
-    func getPhrases() {
-        networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
-            if let responseNew = response??.phrase {
-                print(responseNew)
-            }
-        }
-    }
+//    func getPhrases() {
+//        networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
+//            if let responseNew = response??.phrase {
+//                print(responseNew)
+//            }
+//        }
+//    }
     
     @IBAction func movieBtnPressed(_ sender: Any) {
-        getPhrases()
+        //getPhrases()
     }
     
 }
