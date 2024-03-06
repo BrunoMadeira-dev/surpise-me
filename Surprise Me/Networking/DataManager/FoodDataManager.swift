@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FoodDataManager{
     let networCall = NetworkingCall()
@@ -20,6 +21,15 @@ class FoodDataManager{
                 dataModel = responseObject
             }
             onComplete(dataModel!, error)
+        }
+    }
+    
+    func fetchImage(url: String, onComplete: @escaping (UIImage?) -> ()) {
+        
+        networCall.fetchImage(url: url) { data in
+            if let safeData = data {
+                onComplete(data)
+            }
         }
     }
 }

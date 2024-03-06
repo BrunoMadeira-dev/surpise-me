@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         welcomeLbl.text = "Surprise me"
         startBtn.layer.cornerRadius = 20
         startBtn.setTitle("Start", for: [])
+        navigationItem.backButtonTitle = ""
     }
 
     @IBAction func startPressed(_ sender: Any) {

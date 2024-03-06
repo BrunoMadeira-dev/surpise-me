@@ -19,6 +19,7 @@ class NetworkingCall {
     
     static let shared = NetworkingCall()
     private let session: URLSession
+    var dataImage = UIImage()
     
     init() {
         let config = URLSessionConfiguration.default
@@ -70,5 +71,18 @@ class NetworkingCall {
             }
         }
         task.resume()
+    }
+    
+    func fetchImage(url: String, completion: @escaping (UIImage?) -> ()) {
+        
+        AF.request(url).responseData { response in
+            
+            if let dataImage = response.data {
+                let imageData = UIImage(data: dataImage)
+                completion(imageData)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }

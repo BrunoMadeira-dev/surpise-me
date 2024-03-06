@@ -32,6 +32,7 @@ class ChooseViewController: UIViewController {
         movieBtn.setTitle("Wich movie?", for: [])
         foodBtn.setTitle("What to eat?", for: [])
         boredBtn.setTitle("What to do?", for: [])
+        navigationItem.backButtonTitle = ""
     }
     
     //TODO: Remove this function
