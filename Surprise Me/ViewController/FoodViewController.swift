@@ -25,12 +25,14 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     var mealArray: [MealsRecipesDataModel] = []
     var isLoaded: Bool = false
     var imageFinal = UIImage()
+    var isFromList: Bool = false
     
     override func viewDidLoad() {
         styleUI()
         isLoaded = false
         foodTableView.delegate = self
         foodTableView.dataSource = self
+        foodTableView.reloadData()
         foodTableView.register(UINib(nibName: "FooCell", bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
     }
     
@@ -46,13 +48,37 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         showMoreBtn.layer.cornerRadius = 10
         showMoreBtn.layer.borderWidth = 2
         showMoreBtn.layer.borderColor = UIColor.black.cgColor
-        showMoreBtn.isHidden = true
+        if isFromList {
+            foodTextField.isHidden = true
+            searchFoodBtn.isHidden = true
+            showMoreBtn.isHidden = false
+        } else {
+            foodTextField.placeholder = "Recipe Name"
+            foodTextField.borderStyle = .roundedRect
+            searchFoodBtn.setTitle("Search", for: [])
+            searchFoodBtn.layer.cornerRadius = 10
+            searchFoodBtn.layer.borderWidth = 2
+            searchFoodBtn.layer.borderColor = UIColor.black.cgColor
+            searchFoodBtn.setTitleColor(UIColor.black, for: [])
+            showMoreBtn.setTitle("Ingredients and measures", for: [])
+            showMoreBtn.layer.cornerRadius = 10
+            showMoreBtn.layer.borderWidth = 2
+            showMoreBtn.layer.borderColor = UIColor.black.cgColor
+            showMoreBtn.isHidden = true
+        }
         navigationItem.title = "Foodie"
         navigationItem.backButtonTitle = ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isLoaded ? 1 : 0
+        
+        if isFromList {
+            return 1
+        } else if isLoaded {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

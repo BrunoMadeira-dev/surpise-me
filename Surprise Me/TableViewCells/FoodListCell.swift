@@ -13,10 +13,18 @@ class FoodListCell: UITableViewCell {
     @IBOutlet weak var foodImageList: UIImageView!
     @IBOutlet weak var foodListLbl: UILabel!
     
-    override class func awakeFromNib() {
+    var idMeal: String = ""
+    
+    override func awakeFromNib() {
         super.awakeFromNib()
         
+        foodListLbl.isUserInteractionEnabled = true
         
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+            super.setSelected(selected, animated: animated)
+            // Configure the view for the selected state
+        }
     
 }

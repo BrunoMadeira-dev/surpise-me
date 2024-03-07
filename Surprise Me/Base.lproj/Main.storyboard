@@ -174,7 +174,7 @@
         <!--Food View Controller-->
         <scene sceneID="9Xy-Yj-dVd">
             <objects>
-                <viewController id="C9g-ud-z4B" customClass="FoodViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoodViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C9g-ud-z4B" customClass="FoodViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ySL-aH-1YH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,10 @@
                                 <rect key="frame" x="0.0" y="231.66666666666663" width="393" height="532"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ySL-aH-1YH" id="mzU-jY-RTq"/>
+                                    <outlet property="delegate" destination="ySL-aH-1YH" id="ct8-W2-aEd"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTZ-ui-Ohw">
                                 <rect key="frame" x="80" y="773.66666666666663" width="233" height="34.333333333333371"/>

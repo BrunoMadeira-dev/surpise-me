@@ -25,6 +25,7 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         styleUI()
         tableview.delegate = self
         tableview.dataSource = self
+        tableview.isUserInteractionEnabled = true
         
         tableview.register(UINib(nibName: "FoodListCell", bundle: nil), forCellReuseIdentifier: K.Identifiers.categoryIdentifier)
     }
@@ -51,6 +52,7 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.categoryIdentifier, for: indexPath) as! FoodListCell
         
         cell.foodListLbl.text = meal.strMeal
+        cell.idMeal = meal.idMeal ?? ""
         if let image = imageArray[indexPath.row] {
             cell.foodImageList.image = image
         } else {
@@ -60,9 +62,37 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cellSelected = indexPath.row
+//        let cell = tableView.cellForRow(at: indexPath) as! FoodListCell
+        let info = mealArray[indexPath.row].idMeal
+        print("Cliquei na célula: \(info ?? "")")
+        
+        let url = "\(K.foodByIdURL)\(info ?? "")"
+        FoodDataManager().fetchById(url: url) { responseObject, error in
+            if let error = error {
+                print(error)
+            } else {
+                FoodDataManager().fetchImage(url: responseObject!.meals[0].strMealThumb ?? "") { data in
+                    if let vc = self.storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
+                        
+                        vc.mealArray = responseObject!.meals
+                        vc.isFromList = true
+                        vc.imageFinal = data!
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     @IBAction func searchPressed(_ sender: Any) {
         searchFieldLbl.endEditing(true)
-        var category = searchFieldLbl.text ?? ""
+        let category = searchFieldLbl.text ?? ""
         let warning: UIAlertController = UIAlertController(title: "Warning", message: "You have to choose a category", preferredStyle: .alert)
         if category == "" {
             warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))

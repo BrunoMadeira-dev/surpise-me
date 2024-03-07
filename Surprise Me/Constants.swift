@@ -17,6 +17,7 @@ struct K {
     static var foodRandomURL = "https://www.themealdb.com/api/json/v1/1/random.php?" //Random search
     static var foodSearchURL = "https://www.themealdb.com/api/json/v1/1/search.php?"
     static var foodCategoryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?"// c=Seafood --> for category Search
+    static var foodByIdURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
     
     struct Identifiers {
         static let mealIdentifier = "ReusableFoodCell"

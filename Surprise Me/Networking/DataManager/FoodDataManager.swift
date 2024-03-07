@@ -33,6 +33,19 @@ class FoodDataManager{
         }
     }
     
+    func fetchById(url: String, onComplete: @escaping (MealDataModel?, Error?) -> ()) {
+        networCall.responseCall(url: url, responseType: MealDataModel.self) { responseObject, error in
+            var dataModel: MealDataModel?
+            
+            if let error = error {
+                print(error)
+            } else {
+                dataModel = responseObject
+            }
+            onComplete(dataModel, error)
+        }
+    }
+    
     func fetchCategory(url: String, onComplete: @escaping (MealsCategoryDataModel?, Error?) -> ()) {
         networCall.responseCall(url: url, responseType: MealsCategoryDataModel.self) { responseObject, error in
             var dataModel: MealsCategoryDataModel?
