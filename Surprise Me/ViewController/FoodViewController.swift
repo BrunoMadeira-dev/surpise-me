@@ -37,21 +37,16 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func styleUI() {
-        foodTextField.placeholder = "Recipe Name"
-        foodTextField.borderStyle = .roundedRect
-        searchFoodBtn.setTitle("Search", for: [])
-        searchFoodBtn.layer.cornerRadius = 10
-        searchFoodBtn.layer.borderWidth = 2
-        searchFoodBtn.layer.borderColor = UIColor.black.cgColor
-        searchFoodBtn.setTitleColor(UIColor.black, for: [])
-        showMoreBtn.setTitle("Ingredients and measures", for: [])
-        showMoreBtn.layer.cornerRadius = 10
-        showMoreBtn.layer.borderWidth = 2
-        showMoreBtn.layer.borderColor = UIColor.black.cgColor
+        
+        //if statement to define thw workflow
         if isFromList {
             foodTextField.isHidden = true
             searchFoodBtn.isHidden = true
             showMoreBtn.isHidden = false
+            showMoreBtn.setTitle("Ingredients and measures", for: [])
+            showMoreBtn.layer.cornerRadius = 10
+            showMoreBtn.layer.borderWidth = 2
+            showMoreBtn.layer.borderColor = UIColor.black.cgColor
         } else {
             foodTextField.placeholder = "Recipe Name"
             foodTextField.borderStyle = .roundedRect
@@ -72,9 +67,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isFromList {
-            return 1
-        } else if isLoaded {
+        if isFromList || isLoaded {
             return 1
         } else {
             return 0
@@ -107,7 +100,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             foodTableView.reloadData()
         } else {
             foodTextField.isHidden = false
-            let categoryURL = "\(K.foodCategoryURL)s=\(food)"
+            let categoryURL = "\(K.foodSearchURL)s=\(food)"
             requestFood(url: categoryURL)
             foodTextField.text = "" //clears the textfield for another search
         }

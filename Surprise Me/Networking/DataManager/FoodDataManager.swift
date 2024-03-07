@@ -20,7 +20,7 @@ class FoodDataManager{
             } else {
                 dataModel = responseObject
             }
-            onComplete(dataModel!, error)
+            onComplete(dataModel, error)
         }
     }
     
