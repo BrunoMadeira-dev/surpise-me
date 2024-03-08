@@ -33,7 +33,9 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     func styleUI() {
         searchFieldLbl.placeholder = "Category"
         searchFieldLbl.borderStyle = .roundedRect
-        
+        titleLbl.text = "Recipe Category"
+        titleLbl.font = UIFont(name: "Helvetica", size: 20)
+        titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
         searchBtn.setTitle("Search", for: [])
         searchBtn.layer.cornerRadius = 10
         searchBtn.layer.borderWidth = 2
@@ -73,15 +75,14 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
             if let error = error {
                 print(error)
             } else {
-                FoodDataManager().fetchImage(url: responseObject!.meals[0].strMealThumb ?? "") { data in
                     if let vc = self.storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
                         
                         vc.mealArray = responseObject!.meals
                         vc.isFromList = true
-                        vc.imageFinal = data!
+                        //vc.imageFinal = data!
+                        vc.imageFinal = self.imageArray[indexPath.row]!
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
-                }
             }
         }
     }

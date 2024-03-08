@@ -43,7 +43,7 @@ class IngredientsViewController: UIViewController {
     }
     
     func styleUI() {
-        titleLbl.text = "Ingredients:"
+        titleLbl.text = "Ingredients"
         titleLbl.font = UIFont(name: "Helvetica", size: 20)
         titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
     }

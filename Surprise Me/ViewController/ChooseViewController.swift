@@ -18,7 +18,7 @@ class ChooseViewController: UIViewController {
     let networker = NetworkingCall()
     
     //MARK: take this url
-    let url = "https://corporatebs-generator.sameerkumar.website/" //mock url jus to test
+    //let url = "https://corporatebs-generator.sameerkumar.website/" //mock url jus to test
     
     override func viewDidLoad() {
         styleUI()
@@ -29,26 +29,18 @@ class ChooseViewController: UIViewController {
         foodBtn.layer.cornerRadius = 10
         boredBtn.layer.cornerRadius = 10
         
-        movieBtn.setTitle("Wich movie?", for: [])
-        foodBtn.setTitle("What to eat?", for: [])
-        boredBtn.setTitle("What to do?", for: [])
+        movieBtn.setTitle("Wich movie?", for: []) //For future feature
+        foodBtn.setTitle("Recipe Randomizer", for: [])
+        boredBtn.setTitle("Recipe Category", for: [])
         navigationItem.backButtonTitle = ""
         
         movieBtn.isHidden = true
         boredBtn.isHidden = false
     }
     
-    //TODO: Remove this function
-//    func getPhrases() {
-//        networker.responseCall(url: url, responseType: EnterpriseDataModel?.self) { response, error in
-//            if let responseNew = response??.phrase {
-//                print(responseNew)
-//            }
-//        }
-//    }
     
     @IBAction func movieBtnPressed(_ sender: Any) {
-        //getPhrases()
+
     }
     
 }

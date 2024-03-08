@@ -13,11 +13,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var foodTextField: UITextField!
     @IBOutlet weak var searchFoodBtn: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var uiViewFood: UIView!
     @IBOutlet weak var foodTableView: UITableView!
     @IBOutlet weak var showMoreBtn: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
     
     var stackViewHeight: Double = 0.0
     var food: String = ""
@@ -34,6 +32,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         foodTableView.dataSource = self
         foodTableView.reloadData()
         foodTableView.register(UINib(nibName: "FooCell", bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
+        titleLbl.text = "Recipe Randomizer"
+        titleLbl.font = UIFont(name: "Helvetica", size: 20)
+        titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
     }
     
     func styleUI() {
@@ -165,8 +166,7 @@ extension FoodViewController {
                 }
 
             } else {
-                self.scrollView.isHidden = true
-                self.stackView.isHidden = true
+                print("Error obtaining an answer")
             }
         }
     }
