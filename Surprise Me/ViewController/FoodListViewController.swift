@@ -16,7 +16,6 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var tableview: UITableView!
     
-    var isLoaded: Bool = false
     var mealArray: [MealsDetailCategoryDataModel] = []
     var imageArray: [UIImage?] = []
     
@@ -44,11 +43,11 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if mealArray.count != 0 {
             return mealArray.count
         } else { return 0 }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meal = mealArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.categoryIdentifier, for: indexPath) as! FoodListCell
@@ -65,11 +64,7 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cellSelected = indexPath.row
-//        let cell = tableView.cellForRow(at: indexPath) as! FoodListCell
         let info = mealArray[indexPath.row].idMeal
-        print("Cliquei na célula: \(info ?? "")")
-        
         let url = "\(K.foodByIdURL)\(info ?? "")"
         FoodDataManager().fetchById(url: url) { responseObject, error in
             if let error = error {
@@ -79,7 +74,6 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
                         
                         vc.mealArray = responseObject!.meals
                         vc.isFromList = true
-                        //vc.imageFinal = data!
                         vc.imageFinal = self.imageArray[indexPath.row]!
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
@@ -98,11 +92,9 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         if category == "" {
             warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
             self.navigationController?.present(warning, animated: true, completion: nil)
-            
         } else {
             let url = "\(K.foodCategoryURL)c=\(category)"
             fetchCategoryFood(url: url)
-            tableview.reloadData()
             searchFieldLbl.text = ""
         }
     }
@@ -115,28 +107,34 @@ extension FoodListViewController {
         FoodDataManager().fetchCategory(url: url) { responseObject, error in
             
             if let error = error {
+                let warning: UIAlertController = UIAlertController(title: "Warning", message: "\(error.localizedDescription.description) Try writing something", preferredStyle: .alert)
+                warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+                self.navigationController?.present(warning, animated: true, completion: nil)
                 print(error)
-            }
-            
-            if let response = responseObject {
-                self.mealArray = []
-                self.mealArray.append(contentsOf: response.meals)
-                //self.tableview.reloadData()
-                for meal in self.mealArray {
-                    let url = URL(string: meal.strMealThumb ?? "")
-                    KingfisherManager.shared.retrieveImage(with: url!) { result in
-                        switch result {
-                        case .success(let image):
-                            // Extraia a imagem do RetrieveImageResult
-                            self.imageArray.append(image.image)  // Agora está correto, pois image é um UIImage?
-                        case .failure(let error):
-                            print(error)
-                        }
-                        
-                        if self.imageArray.count == self.mealArray.count {
-                            self.tableview.reloadData()
-                        } else {
-                            print("Algo deu erro")
+            } else {
+                if let response = responseObject {
+                    self.mealArray = [] //clears the array to display knew foods
+                    self.mealArray.append(contentsOf: response.meals)
+                    for meal in self.mealArray {
+                        let url = URL(string: meal.strMealThumb ?? "")
+                        KingfisherManager.shared.retrieveImage(with: url!) { result in
+                            switch result {
+                            case .success(let image):
+                                // Retrives an image from RetrieveImageResult
+                                self.imageArray.append(image.image)  // Know its correct image its a UIImage?
+                            case .failure(let error):
+                                //Displays a warning - later this will become modular
+                                let warning: UIAlertController = UIAlertController(title: "Warning", message: "\(error.localizedDescription.description) Try writing something", preferredStyle: .alert)
+                                warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+                                self.navigationController?.present(warning, animated: true, completion: nil)
+                                print(error)
+                            }
+                            //only do tablewview.reload after both arrays are equal
+                            if self.imageArray.count == self.mealArray.count {
+                                self.tableview.reloadData()
+                            } else {
+                                print("The Arrays aren't equal")
+                            }
                         }
                     }
                 }
