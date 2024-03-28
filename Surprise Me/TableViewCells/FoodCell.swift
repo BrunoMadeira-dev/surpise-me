@@ -20,14 +20,14 @@ class FoodCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let cornerRadius: CGFloat = 10
-        let maskPath = UIBezierPath(roundedRect: foodImage.bounds,
-                                    byRoundingCorners: [.allCorners],
-                                    cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = foodImage.bounds
-        maskLayer.path = maskPath.cgPath
-        foodImage.layer.mask = maskLayer
+//        let cornerRadius: CGFloat = 10
+//        let maskPath = UIBezierPath(roundedRect: foodImage.bounds,
+//                                    byRoundingCorners: [.allCorners],
+//                                    cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+//        let maskLayer = CAShapeLayer()
+//        maskLayer.frame = foodImage.bounds
+//        maskLayer.path = maskPath.cgPath
+//        foodImage.layer.mask = maskLayer
         
         foodTitleLbl.textColor = UIColor.black
         foodCategoryLbl.textColor = UIColor.black
@@ -39,10 +39,10 @@ class FoodCell: UITableViewCell {
         foodImage.layer.shadowOffset = CGSize(width: 2, height: 5)
         foodImage.layer.shadowOpacity = 1.5
         foodImage.layer.shadowRadius = 10
+        foodImage.layer.shadowPath = UIBezierPath(rect: foodImage.bounds).cgPath
+        foodImage.layer.shouldRasterize = false
         foodImage.layer.masksToBounds = false
-        foodImage.layer.cornerRadius = cornerRadius
-        foodImage.clipsToBounds = true
-        
+        foodImage.layer.cornerRadius = 7
         
         moreRecipesBtn.isHidden = true
     }

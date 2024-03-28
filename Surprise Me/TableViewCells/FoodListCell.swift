@@ -19,6 +19,17 @@ class FoodListCell: UITableViewCell {
         super.awakeFromNib()
         
         foodListLbl.isUserInteractionEnabled = true
+        //foodImageList.layer.cornerRadius = 7
+        
+        foodImageList.layer.shadowColor = UIColor.black.cgColor
+        foodImageList.layer.shadowOffset = CGSize(width: 2, height: 5)
+        foodImageList.layer.shadowOpacity = 1.5
+        foodImageList.layer.shadowRadius = 10
+        
+        foodImageList.layer.masksToBounds = false
+        foodImageList.layer.cornerRadius = 7
+        
+        //foodImageList.clipsToBounds = true
         
     }
     

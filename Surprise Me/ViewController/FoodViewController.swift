@@ -44,25 +44,25 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             foodTextField.isHidden = true
             searchFoodBtn.isHidden = true
             showMoreBtn.isHidden = false
-            showMoreBtn.setTitle("Ingredients and measures", for: [])
+            showMoreBtn.setTitle(K.foodBtnTitle, for: [])
             showMoreBtn.layer.cornerRadius = 10
             showMoreBtn.layer.borderWidth = 2
             showMoreBtn.layer.borderColor = UIColor.black.cgColor
         } else {
-            foodTextField.placeholder = "Recipe Name"
+            foodTextField.placeholder = K.searchPlaceholder
             foodTextField.borderStyle = .roundedRect
-            searchFoodBtn.setTitle("Search", for: [])
+            searchFoodBtn.setTitle(K.search, for: [])
             searchFoodBtn.layer.cornerRadius = 10
             searchFoodBtn.layer.borderWidth = 2
             searchFoodBtn.layer.borderColor = UIColor.black.cgColor
             searchFoodBtn.setTitleColor(UIColor.black, for: [])
-            showMoreBtn.setTitle("Ingredients and measures", for: [])
+            showMoreBtn.setTitle(K.foodBtnTitle, for: [])
             showMoreBtn.layer.cornerRadius = 10
             showMoreBtn.layer.borderWidth = 2
             showMoreBtn.layer.borderColor = UIColor.black.cgColor
             showMoreBtn.isHidden = true
         }
-        navigationItem.title = "Foodie"
+        navigationItem.title = K.titleFoodView
         navigationItem.backButtonTitle = ""
     }
     
@@ -101,7 +101,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             foodTableView.reloadData()
         } else {
             foodTextField.isHidden = false
-            let categoryURL = "\(K.foodSearchURL)s=\(food)"
+            let categoryURL = "\(K.foodSearchURL)\(food)"
             requestFood(url: categoryURL)
             foodTextField.text = "" //clears the textfield for another search
         }
@@ -109,7 +109,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "IngredientSegue" {
+        if segue.identifier == K.Segue.ingridientSegue {
             if let destVC = segue.destination as? IngredientsViewController {
                 
                 destVC.mealIngredients = mealArray
@@ -117,10 +117,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    @IBAction func ingredientsBtnPressed(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Ingredients", bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: "ingredientsViewController") as! IngredientsViewController
+    @IBAction func ingredientsBtnPressed(_ sender: Any) {        
+        let storyboard = UIStoryboard(name: K.Identifiers.ingridients, bundle: nil)
+        let navVC = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingridentsViewController) as! IngredientsViewController
         
         navVC.mealIngredients = mealArray
     }
@@ -137,7 +136,6 @@ extension FoodViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         foodTextField.resignFirstResponder()
         return true
     }
@@ -151,6 +149,8 @@ extension FoodViewController {
         
         FoodDataManager().fetchRandomFood(url: url) { responseObject, error in
             if let error = error {
+                let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error.localizedDescription.description)")
+                self.present(alert, animated: true)
                 print(error)
             }
             

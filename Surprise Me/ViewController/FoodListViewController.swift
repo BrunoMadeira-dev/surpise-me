@@ -26,20 +26,21 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         tableview.dataSource = self
         tableview.isUserInteractionEnabled = true
         
-        tableview.register(UINib(nibName: "FoodListCell", bundle: nil), forCellReuseIdentifier: K.Identifiers.categoryIdentifier)
+        tableview.register(UINib(nibName: K.Identifiers.foodListCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.categoryIdentifier)
     }
     
     func styleUI() {
-        searchFieldLbl.placeholder = "Category"
+        searchFieldLbl.placeholder = K.category
         searchFieldLbl.borderStyle = .roundedRect
-        titleLbl.text = "Recipe Category"
+        titleLbl.text = K.recipeCat
         titleLbl.font = UIFont(name: "Helvetica", size: 20)
         titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
-        searchBtn.setTitle("Search", for: [])
+        searchBtn.setTitle(K.search, for: [])
         searchBtn.layer.cornerRadius = 10
         searchBtn.layer.borderWidth = 2
         searchBtn.layer.borderColor = UIColor.black.cgColor
         searchBtn.setTitleColor(UIColor.black, for: [])
+        navigationItem.backButtonTitle = ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,12 +78,13 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         searchFieldLbl.endEditing(true)
         let category = searchFieldLbl.text ?? ""
         if category == "" {
-            let alert = Utils().showPopup(title: "Warning", message: "Category can't be empty")
+            let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
             self.present(alert, animated: true)
         } else {
-            let url = "\(K.foodCategoryURL)c=\(category)"
+            let url = "\(K.foodCategoryURL)\(category)"
             fetchCategoryFood(url: url)
             searchFieldLbl.text = ""
+            imageArray = []
         }
     }
 }
@@ -95,10 +97,11 @@ extension FoodListViewController {
         FoodDataManager().fetchCategory(url: url) { responseObject, error in
             
             if let error = error {
-                let alert = Utils().showPopup(title: "Warning", message: "There was an error: \(error.localizedDescription.description)")
+                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 self.present(alert, animated: true)
                 print(error)
             } else {
+                var count = 0
                 if let response = responseObject {
                     self.mealArray = [] //clears the array to display knew foods
                     self.mealArray.append(contentsOf: response.meals)
@@ -111,7 +114,7 @@ extension FoodListViewController {
                                 self.imageArray.append(image.image)  // Know its correct image its a UIImage?
                             case .failure(let error):
                                 //Displays a warning with a message from the api
-                                let alert = Utils().showPopup(title: "Warning", message: "There was an error in image processing: \(error.localizedDescription.description)")
+                                let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error.localizedDescription.description)")
                                 self.present(alert, animated: true)
                                 print(error)
                             }
@@ -119,7 +122,8 @@ extension FoodListViewController {
                             if self.imageArray.count == self.mealArray.count {
                                 self.tableview.reloadData()
                             } else {
-                                print("The Arrays aren't equal")
+                                count += 1
+                                print("The Arrays aren't equal yet: \(count)")
                             }
                         }
                     }
@@ -132,11 +136,11 @@ extension FoodListViewController {
     func fetchRecipeFromTable(url: String, imageData: UIImage) {
         FoodDataManager().fetchById(url: url) { responseObject, error in
             if let error = error {
-                let alert = Utils().showPopup(title: "Warning", message: "There was an error: \(error.localizedDescription.description)")
+                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 self.present(alert, animated: true)
                 print(error)
             } else {
-                    if let vc = self.storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
+                if let vc = self.storyboard?.instantiateViewController(identifier: K.Identifiers.foodViewController) as? FoodViewController {
                         
                         vc.mealArray = responseObject!.meals
                         vc.isFromList = true
