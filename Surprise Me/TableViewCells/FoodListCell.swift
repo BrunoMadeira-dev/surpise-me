@@ -12,6 +12,7 @@ class FoodListCell: UITableViewCell {
     
     @IBOutlet weak var foodImageList: UIImageView!
     @IBOutlet weak var foodListLbl: UILabel!
+    @IBOutlet weak var view: UIView!
     
     var idMeal: String = ""
     
@@ -21,15 +22,13 @@ class FoodListCell: UITableViewCell {
         foodListLbl.isUserInteractionEnabled = true
         //foodImageList.layer.cornerRadius = 7
         
-        foodImageList.layer.shadowColor = UIColor.black.cgColor
-        foodImageList.layer.shadowOffset = CGSize(width: 2, height: 5)
-        foodImageList.layer.shadowOpacity = 1.5
-        foodImageList.layer.shadowRadius = 10
-        
-        foodImageList.layer.masksToBounds = false
+        foodImageList.layer.masksToBounds = true
         foodImageList.layer.cornerRadius = 7
         
-        //foodImageList.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.layer.shadowOffset = CGSize(width: 2, height: 5)
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowRadius = 5
         
     }
     

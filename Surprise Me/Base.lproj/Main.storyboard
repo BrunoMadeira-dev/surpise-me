@@ -549,8 +549,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SRp-Md-pbb">
-                                <rect key="frame" x="0.0" y="261.66666666666669" width="393" height="536.33333333333326"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SRp-Md-pbb">
+                                <rect key="frame" x="0.0" y="261.66666666666669" width="393" height="590.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -558,12 +558,12 @@
                         <viewLayoutGuide key="safeArea" id="BoM-TP-7Ee"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SRp-Md-pbb" secondAttribute="bottom" id="3aL-VN-ia0"/>
                             <constraint firstItem="pTl-3L-UzC" firstAttribute="top" secondItem="BoM-TP-7Ee" secondAttribute="top" constant="10" id="9SW-53-PXB"/>
                             <constraint firstItem="SRp-Md-pbb" firstAttribute="top" secondItem="J6z-J4-3mf" secondAttribute="bottom" constant="20" id="CpF-t7-vUn"/>
                             <constraint firstItem="BoM-TP-7Ee" firstAttribute="trailing" secondItem="J6z-J4-3mf" secondAttribute="trailing" constant="120" id="UAP-tx-AbL"/>
                             <constraint firstItem="BoM-TP-7Ee" firstAttribute="trailing" secondItem="pTl-3L-UzC" secondAttribute="trailing" constant="140" id="aNR-yA-X17"/>
                             <constraint firstItem="BoM-TP-7Ee" firstAttribute="trailing" secondItem="SRp-Md-pbb" secondAttribute="trailing" id="cKJ-VR-9Fr"/>
-                            <constraint firstItem="BoM-TP-7Ee" firstAttribute="bottom" secondItem="SRp-Md-pbb" secondAttribute="bottom" constant="20" id="dRJ-U0-gFq"/>
                             <constraint firstItem="pTl-3L-UzC" firstAttribute="leading" secondItem="BoM-TP-7Ee" secondAttribute="leading" constant="30" id="qYk-zZ-ptA"/>
                             <constraint firstItem="SRp-Md-pbb" firstAttribute="leading" secondItem="BoM-TP-7Ee" secondAttribute="leading" id="usF-hP-PRB"/>
                             <constraint firstItem="pTl-3L-UzC" firstAttribute="bottom" secondItem="J6z-J4-3mf" secondAttribute="top" constant="-20" id="wye-zK-syN"/>

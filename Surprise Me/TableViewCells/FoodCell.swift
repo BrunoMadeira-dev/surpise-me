@@ -16,6 +16,7 @@ class FoodCell: UITableViewCell {
     @IBOutlet weak var foodInstructsLbl: UILabel!
     @IBOutlet weak var moreRecipesBtn: UIButton!
     @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var view: UIView!
     
     
     override func awakeFromNib() {
@@ -34,14 +35,11 @@ class FoodCell: UITableViewCell {
         foodCountryLbl.textColor = UIColor.black
         foodInstructsLbl.textColor = UIColor.black
         
-        
-        foodImage.layer.shadowColor = UIColor.black.cgColor
-        foodImage.layer.shadowOffset = CGSize(width: 2, height: 5)
-        foodImage.layer.shadowOpacity = 1.5
-        foodImage.layer.shadowRadius = 10
-        foodImage.layer.shadowPath = UIBezierPath(rect: foodImage.bounds).cgPath
-        foodImage.layer.shouldRasterize = false
-        foodImage.layer.masksToBounds = false
+        view.layer.cornerRadius = 10
+        view.layer.shadowOffset = CGSize(width: 2, height: 5)
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowRadius = 5
+        foodImage.layer.masksToBounds = true
         foodImage.layer.cornerRadius = 7
         
         moreRecipesBtn.isHidden = true
