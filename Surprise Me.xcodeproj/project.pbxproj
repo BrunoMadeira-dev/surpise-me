@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FAC852E5D236BD3A4F63BB2 /* Pods_Surprise_MeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1410E2E9F3C29B4C57F7E308 /* Pods_Surprise_MeTests.framework */; };
+		546741E52BC9E1100002C083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546741E42BC9E1100002C083 /* GoogleService-Info.plist */; };
 		54D62D122B8D2D2100AE21BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D112B8D2D2100AE21BD /* AppDelegate.swift */; };
 		54D62D142B8D2D2100AE21BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D132B8D2D2100AE21BD /* SceneDelegate.swift */; };
 		54D62D162B8D2D2100AE21BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D152B8D2D2100AE21BD /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		1410E2E9F3C29B4C57F7E308 /* Pods_Surprise_MeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surprise_MeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33475726CF49E80B38AF0E63 /* Pods-Surprise MeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise MeTests.release.xcconfig"; path = "Target Support Files/Pods-Surprise MeTests/Pods-Surprise MeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4AB3CC363438FCB6998C34FC /* Pods_Surprise_Me_Surprise_MeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surprise_Me_Surprise_MeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		546741E42BC9E1100002C083 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		54D62D0E2B8D2D2100AE21BD /* Surprise Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D62D112B8D2D2100AE21BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D62D132B8D2D2100AE21BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				54D62D1A2B8D2D2300AE21BD /* Assets.xcassets */,
 				54D62D1C2B8D2D2300AE21BD /* LaunchScreen.storyboard */,
 				54D62D1F2B8D2D2300AE21BD /* Info.plist */,
+				546741E42BC9E1100002C083 /* GoogleService-Info.plist */,
 				54D62D522B91FB7300AE21BD /* Constants.swift */,
 			);
 			path = "Surprise Me";
@@ -389,6 +392,7 @@
 				54D62D1B2B8D2D2300AE21BD /* Assets.xcassets in Resources */,
 				54D62D192B8D2D2100AE21BD /* Main.storyboard in Resources */,
 				54D62D612B97747D00AE21BD /* Ingredients.storyboard in Resources */,
+				546741E52BC9E1100002C083 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

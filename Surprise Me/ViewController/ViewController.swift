@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var welcomeLbl: CLTypingLabel!
     @IBOutlet weak var startBtn: UIButton!
+    @IBOutlet weak var logInBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,9 @@ class ViewController: UIViewController {
         
         welcomeLbl.text = "Surprise me"
         startBtn.layer.cornerRadius = 20
-        startBtn.setTitle("Start", for: [])
+        startBtn.setTitle("Sign In", for: [])
+        logInBtn.layer.cornerRadius = 20
+        logInBtn.setTitle("Log In", for: [])
         navigationItem.backButtonTitle = ""
     }
 
