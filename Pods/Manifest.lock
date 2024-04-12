@@ -2,15 +2,18 @@ PODS:
   - Alamofire (5.8.1)
   - CLTypingLabel (0.4.0)
   - Kingfisher (7.11.0)
+  - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - CLTypingLabel
   - Kingfisher
+  - MBProgressHUD
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Kingfisher
+    - MBProgressHUD
   trunk:
     - Alamofire
     - CLTypingLabel
@@ -19,7 +22,8 @@ SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: f985a8edaa263ab30c3f715f67a58d2cb63e9566
+PODFILE CHECKSUM: 906a0a3fea57387475fe5091cc8afb84a5115fd2
 
 COCOAPODS: 1.14.3

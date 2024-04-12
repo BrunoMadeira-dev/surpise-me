@@ -73,15 +73,15 @@ class NetworkingCall {
         task.resume()
     }
     
-    func fetchImage(url: String, completion: @escaping (UIImage?) -> ()) {
+    func fetchImage(url: String, completion: @escaping (UIImage?, Error?) -> ()) {
         
         AF.request(url).responseData { response in
             
             if let dataImage = response.data {
                 let imageData = UIImage(data: dataImage)
-                completion(imageData)
+                completion(imageData, nil)
             } else {
-                completion(nil)
+                completion(nil, response.error)
             }
         }
     }

@@ -146,26 +146,35 @@ extension FoodViewController: UITextFieldDelegate {
 extension FoodViewController {
     
     func requestFood(url: String) {
-        
+        Utils().showProgressPopUp(view: self.view)
         FoodDataManager().fetchRandomFood(url: url) { responseObject, error in
             if let error = error {
-                let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error.localizedDescription.description)")
+                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 self.present(alert, animated: true)
                 print(error)
+                Utils().hideProgressPopUp(view: self.view)
             }
-            
             if let safeResp = responseObject {
                 self.mealArray = []
                 self.mealArray.append(contentsOf: safeResp.meals)
                 self.isLoaded = true
                 self.showMoreBtn.isHidden = false
                 
-                FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data in
-                    self.imageFinal = data!
-                    self.foodTableView.reloadData()
+                FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data, error in
+                    if error != nil {
+                        let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error?.localizedDescription.description ?? "Erro!")")
+                        self.present(alert, animated: true)
+                        print(error ?? "erro")
+                        Utils().hideProgressPopUp(view: self.view)
+                    } else {
+                        self.imageFinal = data!
+                        self.foodTableView.reloadData()
+                        Utils().hideProgressPopUp(view: self.view)
+                    }
                 }
 
             } else {
+                Utils().hideProgressPopUp(view: self.view)
                 print("Error obtaining an answer")
             }
         }

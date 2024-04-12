@@ -40,6 +40,7 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         searchBtn.layer.borderWidth = 2
         searchBtn.layer.borderColor = UIColor.black.cgColor
         searchBtn.setTitleColor(UIColor.black, for: [])
+        navigationItem.title = K.titleFoodView
         navigationItem.backButtonTitle = ""
     }
     
@@ -84,7 +85,6 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
             let url = "\(K.foodCategoryURL)\(category)"
             fetchCategoryFood(url: url)
             searchFieldLbl.text = ""
-            imageArray = []
         }
     }
 }
@@ -101,9 +101,11 @@ extension FoodListViewController {
                 self.present(alert, animated: true)
                 print(error)
             } else {
+                Utils().showProgressPopUp(view: self.view)
                 var count = 0
                 if let response = responseObject {
                     self.mealArray = [] //clears the array to display knew foods
+                    self.imageArray = []
                     self.mealArray.append(contentsOf: response.meals)
                     for meal in self.mealArray {
                         let url = URL(string: meal.strMealThumb ?? "")
@@ -121,6 +123,7 @@ extension FoodListViewController {
                             //only do tableview.reload after both arrays are equal
                             if self.imageArray.count == self.mealArray.count {
                                 self.tableview.reloadData()
+                                Utils().hideProgressPopUp(view: self.view)
                             } else {
                                 count += 1
                                 print("The Arrays aren't equal yet: \(count)")
@@ -139,13 +142,16 @@ extension FoodListViewController {
                 let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 self.present(alert, animated: true)
                 print(error)
+                Utils().hideProgressPopUp(view: self.view)
             } else {
+                Utils().showProgressPopUp(view: self.view)
                 if let vc = self.storyboard?.instantiateViewController(identifier: K.Identifiers.foodViewController) as? FoodViewController {
                         
                         vc.mealArray = responseObject!.meals
                         vc.isFromList = true
                         vc.imageFinal = imageData
                         self.navigationController?.pushViewController(vc, animated: true)
+                        Utils().hideProgressPopUp(view: self.view)
                     }
             }
         }

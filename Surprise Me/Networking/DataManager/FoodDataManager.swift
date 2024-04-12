@@ -24,11 +24,14 @@ class FoodDataManager{
         }
     }
     
-    func fetchImage(url: String, onComplete: @escaping (UIImage?) -> ()) {
+    func fetchImage(url: String, onComplete: @escaping (UIImage?, Error?) -> ()) {
         
-        networCall.fetchImage(url: url) { data in
+        networCall.fetchImage(url: url) { data, error in
+            if let error = error {
+                onComplete(nil, error)
+            }
             if let safeData = data {
-                onComplete(data)
+                onComplete(data, nil)
             }
         }
     }
