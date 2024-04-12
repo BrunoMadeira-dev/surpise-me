@@ -31,14 +31,13 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         foodTableView.delegate = self
         foodTableView.dataSource = self
         foodTableView.reloadData()
-        foodTableView.register(UINib(nibName: "FooCell", bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
-        titleLbl.text = "Recipe Randomizer"
+        foodTableView.register(UINib(nibName: K.Identifiers.customFoodCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
+        titleLbl.text = K.mainTitle
         titleLbl.font = UIFont(name: "Helvetica", size: 20)
         titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
     }
     
     func styleUI() {
-        
         //if statement to define thw workflow
         if isFromList {
             foodTextField.isHidden = true
@@ -67,7 +66,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        //if fromList = true means that there is already information needed to show something
+        //if isLoaded = true means that there is something from the search
         if isFromList || isLoaded {
             return 1
         } else {
@@ -117,7 +117,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    @IBAction func ingredientsBtnPressed(_ sender: Any) {        
+    @IBAction func ingredientsBtnPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: K.Identifiers.ingridients, bundle: nil)
         let navVC = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingridentsViewController) as! IngredientsViewController
         

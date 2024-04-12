@@ -17,6 +17,7 @@ struct K {
     static let titleFoodView = "Foodie"
     static let foodBtnTitle = "Ingredients and measures"
     static let searchPlaceholder = "Recipe Name"
+    static let mainTitle = "Recipe Randomizer"
     
     static var foodRandomURL = "https://www.themealdb.com/api/json/v1/1/random.php?" //Random search
     static var foodSearchURL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
@@ -40,5 +41,6 @@ struct K {
         static let foodListCell = "FoodListCell"
         static let ingridentsViewController = "ingredientsViewController"
         static let ingridients = "Ingredients"
+        static let customFoodCell = "FooCell"
     }
 }
