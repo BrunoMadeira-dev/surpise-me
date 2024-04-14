@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class FoodListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FoodListViewController: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var searchFieldLbl: UITextField!
@@ -51,6 +51,25 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         dismiss(animated: true)
     }
     
+    @IBAction func searchPressed(_ sender: Any) {
+        searchFieldLbl.endEditing(true)
+        let category = searchFieldLbl.text ?? ""
+        if category == "" {
+            DispatchQueue.main.async {
+                let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
+                self.present(alert, animated: true)
+            }
+        } else {
+            let url = "\(K.foodCategoryURL)\(category)"
+            fetchCategoryFood(url: url)
+            searchFieldLbl.text = ""
+        }
+    }
+}
+
+//MARK: Tableview extension
+extension FoodListViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if mealArray.count != 0 {
             return mealArray.count
@@ -73,28 +92,10 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableview.deselectRow(at: indexPath, animated: true)
         let info = mealArray[indexPath.row].idMeal
         let url = "\(K.foodByIdURL)\(info ?? "")"
         fetchRecipeFromTable(url: url, imageData: imageArray[indexPath.row]!)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
-    @IBAction func searchPressed(_ sender: Any) {
-        searchFieldLbl.endEditing(true)
-        let category = searchFieldLbl.text ?? ""
-        if category == "" {
-            DispatchQueue.main.async {
-                let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
-                self.present(alert, animated: true)
-            }
-        } else {
-            let url = "\(K.foodCategoryURL)\(category)"
-            fetchCategoryFood(url: url)
-            searchFieldLbl.text = ""
-        }
     }
 }
 

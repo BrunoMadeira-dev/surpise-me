@@ -36,6 +36,7 @@ class IngredientsViewController: UIViewController {
     @IBOutlet weak var strIngred20Lbl: UILabel!
     
     var mealIngredients: [MealsRecipesDataModel] = []
+    var isFromList: Bool = false
 
     override func viewDidLoad() {
         populateLabels()
@@ -46,6 +47,19 @@ class IngredientsViewController: UIViewController {
         titleLbl.text = "Ingredients"
         titleLbl.font = UIFont(name: "Helvetica", size: 20)
         titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.title = K.titleFoodView
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func backButtonPressed() {
+        if !isFromList {
+            dismiss(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func populateLabels() {

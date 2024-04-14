@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import CoreImage
 
-class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FoodViewController: UIViewController {
     
     @IBOutlet weak var foodTextField: UITextField!
     @IBOutlet weak var searchFoodBtn: UIButton!
@@ -76,6 +76,43 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    @IBAction func searchFoodPressed(_ sender: Any) {
+        foodTextField.endEditing(true)
+        food = foodTextField.text ?? ""
+        //When button is pressed checks if the textfield is empty or not if empty hides the textfield and presents the recipe
+        //if theres a keyword 
+        if food == "" {
+            foodTextField.isHidden = true
+            requestFood(url: K.foodRandomURL)
+            foodTableView.reloadData()
+        } else {
+            foodTextField.isHidden = false
+            let categoryURL = "\(K.foodSearchURL)\(food)"
+            requestFood(url: categoryURL)
+            foodTextField.text = "" //clears the textfield for another search
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == K.Segue.ingridientSegue {
+            if let destVC = segue.destination as? IngredientsViewController {
+                
+                destVC.mealIngredients = mealArray
+                destVC.isFromList = isFromList
+            }
+        }
+    }
+    
+    @IBAction func ingredientsBtnPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: K.Identifiers.ingridients, bundle: nil)
+        let navVC = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingridentsViewController) as! IngredientsViewController  
+    }
+}
+
+//MARK: Tableview Extensions
+extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //if fromList = true means that there is already information needed to show something
         //if isLoaded = true means that there is something from the search
@@ -100,40 +137,6 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
-    @IBAction func searchFoodPressed(_ sender: Any) {
-        foodTextField.endEditing(true)
-        food = foodTextField.text ?? ""
-        //When button is pressed checks if the textfield is empty or not if empty hides the textfield and presents the recipe
-        //if theres a keyword 
-        if food == "" {
-            foodTextField.isHidden = true
-            requestFood(url: K.foodRandomURL)
-            foodTableView.reloadData()
-        } else {
-            foodTextField.isHidden = false
-            let categoryURL = "\(K.foodSearchURL)\(food)"
-            requestFood(url: categoryURL)
-            foodTextField.text = "" //clears the textfield for another search
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == K.Segue.ingridientSegue {
-            if let destVC = segue.destination as? IngredientsViewController {
-                
-                destVC.mealIngredients = mealArray
-            }
-        }
-    }
-    
-    @IBAction func ingredientsBtnPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: K.Identifiers.ingridients, bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingridentsViewController) as! IngredientsViewController
-        
-        navVC.mealIngredients = mealArray
-    }
 }
 
 //MARK: Delegate of UITextField
@@ -153,7 +156,6 @@ extension FoodViewController: UITextFieldDelegate {
 }
 
 //MARK: Button Actions
-
 extension FoodViewController {
     
     func requestFood(url: String) {
