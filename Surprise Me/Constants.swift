@@ -32,6 +32,9 @@ struct K {
         static let moviSegue = "MovieSegue"
         static let foodSegue = "FoodSegue"
         static let ingridientSegue = "IngredientSegue"
+        static let registerSegue = "RegisterUserSegue"
+        static let foodListSegue = "FoodListSegue"
+        static let entersSegue = "enterSegue"
     }
     
     struct Identifiers {

@@ -27,6 +27,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         styleUI()
+        
         isLoaded = false
         foodTableView.delegate = self
         foodTableView.dataSource = self
@@ -61,8 +62,18 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             showMoreBtn.layer.borderColor = UIColor.black.cgColor
             showMoreBtn.isHidden = true
         }
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = K.titleFoodView
-        navigationItem.backButtonTitle = ""
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func backButtonPressed() {
+        if !isFromList {
+            dismiss(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -158,7 +169,6 @@ extension FoodViewController {
                 self.mealArray = []
                 self.mealArray.append(contentsOf: safeResp.meals)
                 self.isLoaded = true
-                self.showMoreBtn.isHidden = false
                 
                 FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data, error in
                     if error != nil {
@@ -170,6 +180,7 @@ extension FoodViewController {
                         self.imageFinal = data!
                         self.foodTableView.reloadData()
                         Utils().hideProgressPopUp(view: self.view)
+                        self.showMoreBtn.isHidden = false
                     }
                 }
 

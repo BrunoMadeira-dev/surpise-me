@@ -25,7 +25,6 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         tableview.delegate = self
         tableview.dataSource = self
         tableview.isUserInteractionEnabled = true
-        
         tableview.register(UINib(nibName: K.Identifiers.foodListCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.categoryIdentifier)
     }
     
@@ -40,8 +39,16 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         searchBtn.layer.borderWidth = 2
         searchBtn.layer.borderColor = UIColor.black.cgColor
         searchBtn.setTitleColor(UIColor.black, for: [])
+        
+        //Navigation
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = K.titleFoodView
-        navigationItem.backButtonTitle = ""
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func backButtonPressed() {
+        dismiss(animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,8 +86,10 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         searchFieldLbl.endEditing(true)
         let category = searchFieldLbl.text ?? ""
         if category == "" {
-            let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
-            self.present(alert, animated: true)
+            DispatchQueue.main.async {
+                let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
+                self.present(alert, animated: true)
+            }
         } else {
             let url = "\(K.foodCategoryURL)\(category)"
             fetchCategoryFood(url: url)
