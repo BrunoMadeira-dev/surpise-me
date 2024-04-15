@@ -33,9 +33,6 @@ class FoodViewController: UIViewController {
         foodTableView.dataSource = self
         foodTableView.reloadData()
         foodTableView.register(UINib(nibName: K.Identifiers.customFoodCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
-        titleLbl.text = K.mainTitle
-        titleLbl.font = UIFont(name: "Helvetica", size: 20)
-        titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
     }
     
     func styleUI() {
@@ -48,6 +45,9 @@ class FoodViewController: UIViewController {
             showMoreBtn.layer.cornerRadius = 10
             showMoreBtn.layer.borderWidth = 2
             showMoreBtn.layer.borderColor = UIColor.black.cgColor
+            titleLbl.text = K.titleFoodView
+            titleLbl.font = UIFont(name: "Helvetica", size: 20)
+            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
         } else {
             foodTextField.placeholder = K.searchPlaceholder
             foodTextField.borderStyle = .roundedRect
@@ -61,9 +61,12 @@ class FoodViewController: UIViewController {
             showMoreBtn.layer.borderWidth = 2
             showMoreBtn.layer.borderColor = UIColor.black.cgColor
             showMoreBtn.isHidden = true
+            titleLbl.text = K.mainTitle
+            titleLbl.font = UIFont(name: "Helvetica", size: 20)
+            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
         }
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = K.titleFoodView
+        navigationItem.title = ""
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
         navigationItem.leftBarButtonItem?.tintColor = .black
     }
@@ -99,7 +102,6 @@ class FoodViewController: UIViewController {
             if let destVC = segue.destination as? IngredientsViewController {
                 
                 destVC.mealIngredients = mealArray
-                destVC.isFromList = isFromList
             }
         }
     }

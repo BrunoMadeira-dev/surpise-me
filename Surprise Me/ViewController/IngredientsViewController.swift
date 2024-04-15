@@ -55,11 +55,7 @@ class IngredientsViewController: UIViewController {
     }
     
     @objc func backButtonPressed() {
-        if !isFromList {
-            dismiss(animated: true)
-        } else {
             navigationController?.popViewController(animated: true)
-        }
     }
     
     func populateLabels() {

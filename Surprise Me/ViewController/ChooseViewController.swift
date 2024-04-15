@@ -36,7 +36,6 @@ class ChooseViewController: UIViewController {
         movieBtn.setTitle("Wich movie?", for: []) //For future feature
         foodBtn.setTitle("Recipe Randomizer", for: [])
         boredBtn.setTitle("Recipe Category", for: [])
-        navigationItem.backButtonTitle = ""
         movieBtn.layer.cornerRadius = 10
         foodBtn.layer.cornerRadius = 10
         boredBtn.layer.cornerRadius = 10
