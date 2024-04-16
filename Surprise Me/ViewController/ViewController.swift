@@ -20,7 +20,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var signInEmail: UITextField!
     @IBOutlet weak var signInPassword: UITextField!
     @IBOutlet weak var buttonStackView: UIStackView!
-    @IBOutlet weak var buttonStackLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var btnCancelLogin: UIButton!
+    @IBOutlet weak var btnAcceptLogin: UIButton!
+    @IBOutlet weak var btnCancelSignin: UIButton!
+    @IBOutlet weak var btnAcceptSignin: UIButton!
+    @IBOutlet weak var accessLoginStackview: UIStackView!
+    @IBOutlet weak var accessSigninStackview: UIStackView!
+    
     
     var countLogin: Int = 0
     var countSignIn: Int = 0
@@ -44,17 +50,25 @@ class ViewController: UIViewController {
         
         logInStackView.isHidden = true
         signInStackview.isHidden = true
+        accessLoginStackview.isHidden = true
+        accessSigninStackview.isHidden = true
     }
     
     func stileUI() {
         welcomeLbl.text = "Surprise me"
+        navigationItem.backButtonTitle = ""
+        logInStackView.isHidden = true
+        signInStackview.isHidden = true
+        
+        //Buttons style
         startBtn.layer.cornerRadius = 20
         startBtn.setTitle("Sign Up", for: [])
         logInBtn.layer.cornerRadius = 20
         logInBtn.setTitle("Log In", for: [])
-        navigationItem.backButtonTitle = ""
-        logInStackView.isHidden = true
-        signInStackview.isHidden = true
+        btnAcceptLogin.setTitle("Log In", for: [])
+        btnCancelLogin.setTitle("Cancel", for: [])
+        btnAcceptSignin.setTitle("Sign In", for: [])
+        btnCancelSignin.setTitle("Cancel", for: [])
         
         //Textfields styles
         logInEmail.placeholder = "example@example.com"
@@ -64,43 +78,6 @@ class ViewController: UIViewController {
         signInPassword.placeholder = "Password"
         signInPassword.isSecureTextEntry = true
         
-    }
-
-    @IBAction func logInPressed(_ sender: Any) {
-        countLogin += 1
-        if signUpPressed {
-            UIView.animate(withDuration: 0.4) {
-                self.signInStackview.isHidden = true
-                self.countSignIn = 0
-                self.signUpPressed = false
-            }
-        }
-        if !checkFields() && countLogin > 1 {
-            let alert = Utils().showPopup(title: K.warning, message: error)
-            present(alert, animated: true)
-        } else {
-            if countLogin == 1 {
-                UIView.animate(withDuration: 0.4) {
-                    self.logInStackView.isHidden = false
-                    self.logInPressed = true
-                }
-            } else {
-                auth.userAuthLogin(email: email, password: password) { success, error  in
-                    if error != nil {
-                        let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                        self.present(alert, animated: true)
-                    } else if success {
-                        self.logInEmail.text = ""
-                        self.logInPassword.text = ""
-                        self.countLogin = 0
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "choose") as! ChooseViewController
-                        let navVC = UINavigationController(rootViewController: vc)
-                        navVC.modalPresentationStyle = .fullScreen
-                        self.present(navVC, animated: true, completion: nil)
-                    }
-                }
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,41 +89,136 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func signUpPressed(_ sender: Any) {
-        countSignIn += 1
-        signUpPressed = true
-        if logInPressed {
-            UIView.animate(withDuration: 0.4) {
-                self.logInStackView.isHidden = true
-                self.countLogin = 0
-                self.logInPressed = false
+
+    @IBAction func logInPressed(_ sender: Any) {
+        //Quando pressiono este botão mostra os campos e os botões de acesso. Enquanto não pressiono não faz nada e esconde tudo o resto
+        if !signUpPressed {
+            UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.8) {
+                self.logInStackView.isHidden = false
+                self.logInPressed = true
+                self.logInBtn.isUserInteractionEnabled = false
+                self.logInPressed = true
+                self.accessLoginStackview.isHidden = false
+            }
+        } else {
+            
+            UIView.animate(withDuration: 0.3) {
+                self.accessSigninStackview.isHidden = true
+                self.signInStackview.isHidden = true
+            }
+            UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
+                self.logInStackView.isHidden = false
+                self.accessLoginStackview.isHidden = false
+                self.accessSigninStackview.layoutIfNeeded()
+                self.signInStackview.layoutIfNeeded()
+            } completion: { _ in
+                self.logInPressed = true
+                self.signUpPressed = false
+                self.startBtn.isUserInteractionEnabled = true
+                
             }
         }
-        if !checkFields() && countSignIn > 1 {
+    }
+    
+    @IBAction func signUpPressed(_ sender: Any) {
+        
+        if !logInPressed {
+            UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.8) {
+                self.signInStackview.isHidden = false
+                self.accessSigninStackview.isHidden = false
+                self.signUpPressed = true
+                self.startBtn.isUserInteractionEnabled = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.accessLoginStackview.isHidden = true
+                self.logInStackView.isHidden = true
+            }
+            UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
+                self.signInStackview.isHidden = false
+                self.accessSigninStackview.isHidden = false
+                self.accessLoginStackview.layoutIfNeeded()
+                self.logInStackView.layoutIfNeeded()
+            } completion: { _ in
+                self.logInPressed = false
+                self.signUpPressed = true
+                self.logInBtn.isUserInteractionEnabled = true
+                
+            }
+        }
+    }
+  
+    //MARK: Procceed Login
+    @IBAction func cancelLoginPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.3) {
+            self.accessLoginStackview.isHidden = true
+            self.logInStackView.isHidden = true
+        }
+        UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
+            self.accessLoginStackview.layoutIfNeeded()
+            self.logInStackView.layoutIfNeeded()
+        } completion: { _ in
+            self.logInPressed = false
+            self.logInBtn.isUserInteractionEnabled = true
+        }
+    }
+    
+    @IBAction func acceptLoginPressed(_ sender: Any) {
+        if !checkFields() && countLogin > 1 {
             let alert = Utils().showPopup(title: K.warning, message: error)
             present(alert, animated: true)
         } else {
-            if countSignIn == 1 {
-                UIView.animate(withDuration: 0.4) {
-                    self.signInStackview.isHidden = false
-                    self.signUpPressed = true
-                }
-            } else if checkFields() {
-                auth.userAuthCreate(email: email, password: password) { success, error in
-                    if error != nil {
-                        let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                        self.present(alert, animated: true)
-                    } else if success {
-                        self.signInEmail.text = ""
-                        self.signInPassword.text = ""
-                        self.countSignIn = 0
-                        self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
-                    }
+            auth.userAuthLogin(email: email, password: password) { success, error  in
+                if error != nil {
+                    let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
+                    self.present(alert, animated: true)
+                } else if success {
+                    self.logInEmail.text = ""
+                    self.logInPassword.text = ""
+                    self.countLogin = 0
+                    self.logInBtn.isUserInteractionEnabled = true
+                    self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
                 }
             }
         }
     }
+    
+    //MARK: Procceed Signin
+    
+    @IBAction func cancelSigninPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.3) {
+            self.signInStackview.isHidden = true
+            self.accessSigninStackview.isHidden = true
+        }
+        UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
+            self.accessSigninStackview.layoutIfNeeded()
+            self.signInStackview.layoutIfNeeded()
+        } completion: { _ in
+            self.signUpPressed = false
+            self.startBtn.isUserInteractionEnabled = true
+        }
+    }
+    
+    @IBAction func acceptSigninPressed(_ sender: Any) {
+        if !checkFields() && countSignIn > 1 {
+            let alert = Utils().showPopup(title: K.warning, message: error)
+            present(alert, animated: true)
+        } else {
+            auth.userAuthCreate(email: email, password: password) { success, error in
+                if error != nil {
+                    let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
+                    self.present(alert, animated: true)
+                } else if success {
+                    self.signInEmail.text = ""
+                    self.signInPassword.text = ""
+                    self.countSignIn = 0
+                    self.startBtn.isUserInteractionEnabled = true
+                    self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                }
+            }
+        }
+    }
+    
     
     func checkFields() -> Bool {
         if signUpPressed {
