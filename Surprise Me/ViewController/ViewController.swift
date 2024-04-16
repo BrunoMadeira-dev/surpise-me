@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var accessLoginStackview: UIStackView!
     @IBOutlet weak var accessSigninStackview: UIStackView!
     
-    
     var countLogin: Int = 0
     var countSignIn: Int = 0
     var desiredHeight: CGFloat = 400
@@ -41,7 +40,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         stileUI()
     }
     
@@ -101,7 +99,6 @@ class ViewController: UIViewController {
                 self.accessLoginStackview.isHidden = false
             }
         } else {
-            
             UIView.animate(withDuration: 0.3) {
                 self.accessSigninStackview.isHidden = true
                 self.signInStackview.isHidden = true
@@ -115,13 +112,11 @@ class ViewController: UIViewController {
                 self.logInPressed = true
                 self.signUpPressed = false
                 self.startBtn.isUserInteractionEnabled = true
-                
             }
         }
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
-        
         if !logInPressed {
             UIView.animate(withDuration: 0.6, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.8) {
                 self.signInStackview.isHidden = false
@@ -164,7 +159,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acceptLoginPressed(_ sender: Any) {
-        if !checkFields() && countLogin > 1 {
+        let error = checkFields()
+        if error != "" {
             let alert = Utils().showPopup(title: K.warning, message: error)
             present(alert, animated: true)
         } else {
@@ -200,7 +196,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acceptSigninPressed(_ sender: Any) {
-        if !checkFields() && countSignIn > 1 {
+        let error = checkFields()
+        if error != "" {
             let alert = Utils().showPopup(title: K.warning, message: error)
             present(alert, animated: true)
         } else {
@@ -219,39 +216,34 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    func checkFields() -> Bool {
+    func checkFields() -> String {
         if signUpPressed {
-            if signInEmail.text != "" || signInPassword.text != "" || signInEmail.text != "" || signInPassword.text != "" && countSignIn > 1 {
+            if signInEmail.text != "" || signInPassword.text != "" || signInEmail.text != "" || signInPassword.text != "" {
                 email = signInEmail.text!
                 password = signInPassword.text!
                 error = ""
             }
-            if signInEmail.text == nil || signInEmail.text == "" && countSignIn > 1 {
+            if signInEmail.text == nil || signInEmail.text == "" {
                 error += "Please provide an email\n"
             }
-            if signInPassword.text == nil || signInPassword.text == "" && countSignIn > 1 {
+            if signInPassword.text == nil || signInPassword.text == "" {
                 error += "Please provide a password"
             }
         } else {
-            if logInEmail.text != "" || logInPassword.text != "" || logInEmail.text != "" || logInPassword.text != "" && countLogin > 1 {
+            if logInEmail.text != "" || logInPassword.text != "" || logInEmail.text != "" || logInPassword.text != "" {
                 email = logInEmail.text!
                 password = logInPassword.text!
                 error = ""
             }
-            if logInEmail.text == nil || logInEmail.text == "" && countLogin > 1 {
+            if logInEmail.text == nil || logInEmail.text == "" {
                 error += "Please provide an email\n"
             }
-            if logInPassword.text == nil || logInPassword.text == "" && countLogin > 1 {
+            if logInPassword.text == nil || logInPassword.text == "" {
                 error += "Please provide a password"
             }
         }
         
-        if error != "" {
-            return false
-        } else {
-            return true
-        }
+        return error
     }
 }
 
