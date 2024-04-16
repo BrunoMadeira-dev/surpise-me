@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     var email: String = ""
     var password: String = ""
     var signUpPressed: Bool = false
+    var logInPressed: Bool = false
     var auth = UserAuthentication()
     
     override func viewDidLoad() {
@@ -67,13 +68,22 @@ class ViewController: UIViewController {
 
     @IBAction func logInPressed(_ sender: Any) {
         countLogin += 1
-        logInStackView.isHidden = false
+        if signUpPressed {
+            UIView.animate(withDuration: 0.4) {
+                self.signInStackview.isHidden = true
+                self.countSignIn = 0
+                self.signUpPressed = false
+            }
+        }
         if !checkFields() && countLogin > 1 {
             let alert = Utils().showPopup(title: K.warning, message: error)
             present(alert, animated: true)
         } else {
             if countLogin == 1 {
-                logInStackView.isHidden = false
+                UIView.animate(withDuration: 0.4) {
+                    self.logInStackView.isHidden = false
+                    self.logInPressed = true
+                }
             } else {
                 auth.userAuthLogin(email: email, password: password) { success, error  in
                     if error != nil {
@@ -106,12 +116,22 @@ class ViewController: UIViewController {
     @IBAction func signUpPressed(_ sender: Any) {
         countSignIn += 1
         signUpPressed = true
+        if logInPressed {
+            UIView.animate(withDuration: 0.4) {
+                self.logInStackView.isHidden = true
+                self.countLogin = 0
+                self.logInPressed = false
+            }
+        }
         if !checkFields() && countSignIn > 1 {
             let alert = Utils().showPopup(title: K.warning, message: error)
             present(alert, animated: true)
         } else {
             if countSignIn == 1 {
-                signInStackview.isHidden = false
+                UIView.animate(withDuration: 0.4) {
+                    self.signInStackview.isHidden = false
+                    self.signUpPressed = true
+                }
             } else if checkFields() {
                 auth.userAuthCreate(email: email, password: password) { success, error in
                     if error != nil {
