@@ -69,4 +69,23 @@ class MealsRecipesDataModel: Codable {
     var strCreativeCommonsConfirmed: String?
     var dateModified: String?
     
+    func ingredientsAndMeasures() -> [String: String] {
+        
+        var ingredientsAndMeasures = [String: String]()
+        let mirror = Mirror(reflecting: self)
+        
+        for child in mirror.children {
+            if let propertyName = child.label,
+               propertyName.hasPrefix("strIngredient"),
+               let ingredient = child.value as? String,
+               !ingredient.isEmpty,
+               let measureProperty = mirror.children.first(where: { $0.label == "strMeasure\(String(propertyName.dropFirst("strIngredient".count)))" }),
+               let measure = measureProperty.value as? String {
+                ingredientsAndMeasures[ingredient] = measure
+            }
+        }
+        
+        return ingredientsAndMeasures
+    }
+    
 }

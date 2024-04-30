@@ -17,13 +17,15 @@ class FoodViewController: UIViewController {
     @IBOutlet weak var showMoreBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     
-    var stackViewHeight: Double = 0.0
     var food: String = ""
     let networker = NetworkingCall()
     var mealArray: [MealsRecipesDataModel] = []
     var isLoaded: Bool = false
     var imageFinal = UIImage()
     var isFromList: Bool = false
+    var ingredients: [String] = []
+    var measures: [String] = []
+    var ingredientsAndMeasures: [String: String] = [:]
     
     override func viewDidLoad() {
         styleUI()
@@ -96,19 +98,13 @@ class FoodViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == K.Segue.ingridientSegue {
-            if let destVC = segue.destination as? IngredientsViewController {
-                
-                destVC.mealIngredients = mealArray
-            }
-        }
-    }
-    
     @IBAction func ingredientsBtnPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: K.Identifiers.ingridients, bundle: nil)
-        let navVC = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingridentsViewController) as! IngredientsViewController  
+        let storyboard = UIStoryboard(name: "Ingredients", bundle: nil)
+        
+       let vc = storyboard.instantiateViewController(withIdentifier: K.Identifiers.ingredienViewController) as! IngredientsViewController
+        vc.ingredientsAndMeasures = self.ingredientsAndMeasures
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -174,6 +170,9 @@ extension FoodViewController {
                 self.mealArray.append(contentsOf: safeResp.meals)
                 self.isLoaded = true
                 
+                let ingredientsAndMeasure = self.mealArray[0].ingredientsAndMeasures()
+                self.ingredientsAndMeasures = ingredientsAndMeasure
+                print(self.ingredientsAndMeasures.count)
                 FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data, error in
                     if error != nil {
                         let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error?.localizedDescription.description ?? "Erro!")")

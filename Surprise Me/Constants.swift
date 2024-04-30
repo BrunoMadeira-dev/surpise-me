@@ -20,7 +20,7 @@ struct K {
     static let mainTitle = "Recipe Randomizer"
     
     static var foodRandomURL = "https://www.themealdb.com/api/json/v1/1/random.php?" //Random search
-    static var foodSearchURL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    static var foodSearchURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" //uses a name
     static var foodCategoryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="// c=Seafood --> for category Search
     static var foodByIdURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
     
@@ -38,11 +38,15 @@ struct K {
     }
     
     struct Identifiers {
+        static let ingridientIdentifier = "ReusableIngredientsCell"
+        static let ingredientCell = "IngredientsCell"
+        
+        static let ingredienViewController = "IngredientsViewController"
         static let mealIdentifier = "ReusableFoodCell"
         static let categoryIdentifier = "ReusableFoodListCell"
         static let foodViewController = "FoodViewController"
         static let foodListCell = "FoodListCell"
-        static let ingridentsViewController = "ingredientsViewController"
+        //static let ingridentsViewController = "ingredientsViewController"
         static let ingridients = "Ingredients"
         static let customFoodCell = "FooCell"
     }

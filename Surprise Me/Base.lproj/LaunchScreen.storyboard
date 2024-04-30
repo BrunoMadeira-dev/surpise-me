@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,20 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="surprise-me-high-resolution-logo-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="q5Y-f4-R5v">
-                                <rect key="frame" x="49" y="254" width="294" height="302"/>
+                                <rect key="frame" x="21.666666666666657" y="263.66666666666669" width="350" height="350.00000000000006"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="Vgy-eX-01z"/>
-                                    <constraint firstAttribute="height" constant="302" id="xNl-Bd-KSW"/>
+                                    <constraint firstAttribute="width" constant="350" id="Vgy-eX-01z"/>
+                                    <constraint firstAttribute="height" constant="350" id="xNl-Bd-KSW"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="q5Y-f4-R5v" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="303" id="QAC-5t-AZO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q5Y-f4-R5v" secondAttribute="bottom" constant="262" id="YIM-P5-a7Y"/>
-                            <constraint firstItem="q5Y-f4-R5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="kps-xy-fSk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q5Y-f4-R5v" secondAttribute="trailing" constant="50" id="rX0-IR-6tL"/>
+                            <constraint firstItem="q5Y-f4-R5v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AKS-X1-2AR"/>
+                            <constraint firstItem="q5Y-f4-R5v" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UZZ-Zv-oHL"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -10,7 +10,6 @@ import CLTypingLabel
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var welcomeLbl: CLTypingLabel!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
     @IBOutlet weak var logInStackView: UIStackView!
@@ -26,10 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnAcceptSignin: UIButton!
     @IBOutlet weak var accessLoginStackview: UIStackView!
     @IBOutlet weak var accessSigninStackview: UIStackView!
+    @IBOutlet weak var logoImage: UIImageView!
     
-    var countLogin: Int = 0
-    var countSignIn: Int = 0
-    var desiredHeight: CGFloat = 400
     var error = ""
     var email: String = ""
     var password: String = ""
@@ -53,7 +50,7 @@ class ViewController: UIViewController {
     }
     
     func stileUI() {
-        welcomeLbl.text = "Surprise me"
+        logoImage.image = UIImage(named: "surprise-me-high-resolution-logo-transparent")
         navigationItem.backButtonTitle = ""
         logInStackView.isHidden = true
         signInStackview.isHidden = true
@@ -138,7 +135,6 @@ class ViewController: UIViewController {
                 self.logInPressed = false
                 self.signUpPressed = true
                 self.logInBtn.isUserInteractionEnabled = true
-                
             }
         }
     }
@@ -171,7 +167,6 @@ class ViewController: UIViewController {
                 } else if success {
                     self.logInEmail.text = ""
                     self.logInPassword.text = ""
-                    self.countLogin = 0
                     self.logInBtn.isUserInteractionEnabled = true
                     self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
                 }
@@ -208,7 +203,6 @@ class ViewController: UIViewController {
                 } else if success {
                     self.signInEmail.text = ""
                     self.signInPassword.text = ""
-                    self.countSignIn = 0
                     self.startBtn.isUserInteractionEnabled = true
                     self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
                 }

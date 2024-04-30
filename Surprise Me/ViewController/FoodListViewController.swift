@@ -18,6 +18,7 @@ class FoodListViewController: UIViewController {
     
     var mealArray: [MealsDetailCategoryDataModel] = []
     var imageArray: [UIImage?] = []
+    var mealSelected: [MealsRecipesDataModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,13 +157,18 @@ extension FoodListViewController {
             } else {
                 Utils().showProgressPopUp(view: self.view)
                 if let vc = self.storyboard?.instantiateViewController(identifier: K.Identifiers.foodViewController) as? FoodViewController {
-                        
+                    if let safeResponse = responseObject?.meals {
+                        self.mealSelected = []
+                        self.mealSelected.append(contentsOf: safeResponse)
                         vc.mealArray = responseObject!.meals
                         vc.isFromList = true
                         vc.imageFinal = imageData
+                        let ingredientsAndMeasure = self.mealSelected[0].ingredientsAndMeasures()
+                        vc.ingredientsAndMeasures = ingredientsAndMeasure
                         self.navigationController?.pushViewController(vc, animated: true)
                         Utils().hideProgressPopUp(view: self.view)
                     }
+                }
             }
         }
     }

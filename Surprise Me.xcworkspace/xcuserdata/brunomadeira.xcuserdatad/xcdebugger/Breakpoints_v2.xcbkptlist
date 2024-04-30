@@ -3,4 +3,180 @@
    uuid = "62306EE1-F41C-40E3-B508-58EFAD1563A0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A93C0E4-D5FE-42CB-8B1A-A1A0900A87DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Surprise Me/ViewController/FoodViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "ingredientsBtnPressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0A93C0E4-D5FE-42CB-8B1A-A1A0900A87DE - 33c49def304999cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "0A93C0E4-D5FE-42CB-8B1A-A1A0900A87DE - 33c49def304999ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95B3FDE3-4141-492B-A5CD-B97B455BF9AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Surprise Me/ViewController/FoodViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "ingredientsBtnPressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "95B3FDE3-4141-492B-A5CD-B97B455BF9AB - 33c49def304999ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "95B3FDE3-4141-492B-A5CD-B97B455BF9AB - 33c49def304999ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "95B3FDE3-4141-492B-A5CD-B97B455BF9AB - 33c49def304999ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "95B3FDE3-4141-492B-A5CD-B97B455BF9AB - 33c49def30499ee2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Surprise_Me.FoodViewController.ingredientsBtnPressed(Any) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2DD6E53-8DBE-4208-82AC-FE36FA7A167A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Surprise Me/ViewController/FoodListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "fetchRecipeFromTable(url:imageData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D2DD6E53-8DBE-4208-82AC-FE36FA7A167A - 15d1973a2276c9a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Surprise_Me.MealDataModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Surprise_Me.FoodListViewController.fetchRecipeFromTable(url: Swift.String, imageData: __C.UIImage) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "3480">
+               </Location>
+               <Location
+                  uuid = "D2DD6E53-8DBE-4208-82AC-FE36FA7A167A - 15d1973a2276c9a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Surprise_Me.MealDataModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Surprise_Me.FoodListViewController.fetchRecipeFromTable(url: Swift.String, imageData: __C.UIImage) -&gt; ()"
+                  moduleName = "Surprise Me"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunomadeira/Desktop/Development/Surprise%20Me/Surprise%20Me/ViewController/FoodListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "3404">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
