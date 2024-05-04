@@ -87,5 +87,16 @@ class MealsRecipesDataModel: Codable {
         
         return ingredientsAndMeasures
     }
+}
+
+class IngridientDataModel: Codable {
     
+    var ingridient: String?
+    var measure: String?
+    var isSelected: Bool = false
+    
+    init(ingridient: String?, measure: String?) {
+        self.ingridient = ingridient
+        self.measure = measure
+    }
 }

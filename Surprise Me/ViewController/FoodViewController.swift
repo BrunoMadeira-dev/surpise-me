@@ -128,7 +128,7 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
         cell.foodTitleLbl.text = "Name: \(meal.strMeal ?? "" )"
         cell.foodCategoryLbl.text = "Category: \(meal.strCategory ?? "")"
         cell.foodCountryLbl.text = "Country: \(meal.strArea ?? "")"
-        cell.foodInstructsLbl.text = "Instructions: \(meal.strInstructions ?? "")"
+        cell.foodInstructsLbl.text = "Instructions: \n\(meal.strInstructions ?? "")"
         cell.foodImage.image = imageFinal
         cell.foodImage.layer.cornerRadius = 10
         cell.isUserInteractionEnabled = false

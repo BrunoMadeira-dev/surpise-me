@@ -16,6 +16,10 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
     var mealIngredients: [MealsRecipesDataModel] = []
     var isFromList: Bool = false
     var ingredientsAndMeasures: [String: String] = [:]
+    var isSelected: Bool = false
+    var selectedIndex: IndexPath?
+    var ingridientsData: [IngridientDataModel] = []
+    
 
     override func viewDidLoad() {
         //populateLabels()
@@ -23,10 +27,15 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
         ingredientsTable.dataSource = self
         ingredientsTable.delegate = self
         ingredientsTable.register(UINib(nibName: K.Identifiers.ingredientCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.ingridientIdentifier)
+        
+        for (ingridients, measures) in ingredientsAndMeasures {
+            let newIngredient = IngridientDataModel(ingridient: ingridients, measure: measures)
+            ingridientsData.append(newIngredient)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientsAndMeasures.count
+        return ingridientsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,17 +48,27 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let key = Array(ingredientsAndMeasures.keys)
         let value = Array(ingredientsAndMeasures.values)
+        cell.checkImage.image = UIImage(named: "checked")
+        
+        if ingridientsData[indexPath.row].isSelected {
+            cell.checkImage.isHidden = false
+        } else {
+            cell.checkImage.isHidden = true
+            
+        }
         
         cell.ingridientLbl.text = "\(key[indexPath.row]) - \(value[indexPath.row])"
-        
-        cell.accessoryType = .checkmark
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = ingredientsTable.dequeueReusableCell(withIdentifier: K.Identifiers.ingridientIdentifier, for: indexPath) as! IngredientsCell
         ingredientsTable.deselectRow(at: indexPath, animated: true)
         
+        ingridientsData[indexPath.row].isSelected = !ingridientsData[indexPath.row].isSelected
+        
+        ingredientsTable.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func styleUI() {
