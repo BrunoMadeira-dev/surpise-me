@@ -756,6 +756,7 @@ PODS:
     - gRPC-Core/Interface (= 1.49.1)
   - gRPC-Core/Interface (1.49.1)
   - GTMSessionFetcher/Core (3.3.1)
+  - IQKeyboardManager (6.5.17)
   - Kingfisher (7.11.0)
   - leveldb-library (1.22.4)
   - MBProgressHUD (1.2.0)
@@ -772,6 +773,7 @@ DEPENDENCIES:
   - CLTypingLabel
   - FirebaseAuth
   - FirebaseFirestore
+  - IQKeyboardManager
   - Kingfisher
   - MBProgressHUD
 
@@ -791,6 +793,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - IQKeyboardManager
     - Kingfisher
     - leveldb-library
     - MBProgressHUD
@@ -818,6 +821,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": 2df8cba576898bdacd29f0266d5236fa0e26ba6a
   gRPC-Core: a21a60aefc08c68c247b439a9ef97174b0c54f96
   GTMSessionFetcher: 8a1b34ad97ebe6f909fb8b9b77fba99943007556
+  IQKeyboardManager: 904d013844bbae0abe073f015487bfebe5476335
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
   leveldb-library: 06a69cc7582d64b29424a63e085e683cc188230a
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -825,6 +829,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
 
-PODFILE CHECKSUM: 0fc7c48eda2c46b209d41cecbe14fec55fdaef08
+PODFILE CHECKSUM: 5dc0c169ed92f42fb4016355c56600388fd64462
 
 COCOAPODS: 1.14.3
