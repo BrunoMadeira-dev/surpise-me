@@ -26,6 +26,7 @@ class FoodViewController: UIViewController {
     var ingredients: [String] = []
     var measures: [String] = []
     var ingredientsAndMeasures: [String: String] = [:]
+    var isBtnSearchPressed: Bool = false
     
     override func viewDidLoad() {
         styleUI()
@@ -37,40 +38,110 @@ class FoodViewController: UIViewController {
         foodTableView.register(UINib(nibName: K.Identifiers.customFoodCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.mealIdentifier)
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection) //possibly lokk into this warning
+        
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            styleUI()
+        }
+    }
+    
     func styleUI() {
         //if statement to define thw workflow
         if isFromList {
-            foodTextField.isHidden = true
-            searchFoodBtn.isHidden = true
-            showMoreBtn.isHidden = false
-            showMoreBtn.setTitle(K.foodBtnTitle, for: [])
-            showMoreBtn.layer.cornerRadius = 10
-            showMoreBtn.layer.borderWidth = 2
-            showMoreBtn.layer.borderColor = UIColor.black.cgColor
-            titleLbl.text = K.titleFoodView
-            titleLbl.font = UIFont(name: "Helvetica", size: 20)
-            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+            if traitCollection.userInterfaceStyle == .dark {
+                foodTextField.isHidden = true
+                searchFoodBtn.isHidden = true
+                showMoreBtn.isHidden = false
+                showMoreBtn.setTitle(K.foodBtnTitle, for: [])
+                showMoreBtn.setTitleColor(.label, for: [])
+                showMoreBtn.layer.cornerRadius = 10
+                showMoreBtn.layer.borderWidth = 2
+                showMoreBtn.layer.borderColor = UIColor.white.cgColor
+                titleLbl.text = mealArray[0].strMeal
+                titleLbl.font = UIFont(name: "Helvetica", size: 20)
+                titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+                navigationController?.setNavigationBarHidden(false, animated: false)
+                navigationItem.title = K.titleFoodView
+                navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+                navigationItem.leftBarButtonItem?.tintColor = .white
+            } else {
+                foodTextField.isHidden = true
+                searchFoodBtn.isHidden = true
+                showMoreBtn.isHidden = false
+                showMoreBtn.setTitle(K.foodBtnTitle, for: [])
+                showMoreBtn.setTitleColor(.label, for: [])
+                showMoreBtn.layer.cornerRadius = 10
+                showMoreBtn.layer.borderWidth = 2
+                showMoreBtn.layer.borderColor = UIColor.black.cgColor
+                titleLbl.text = mealArray[0].strMeal
+                titleLbl.font = UIFont(name: "Helvetica", size: 20)
+                titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+                navigationController?.setNavigationBarHidden(false, animated: false)
+                navigationItem.title = K.titleFoodView
+                navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+                navigationItem.leftBarButtonItem?.tintColor = .black
+            }
         } else {
-            foodTextField.placeholder = K.searchPlaceholder
-            foodTextField.borderStyle = .roundedRect
-            searchFoodBtn.setTitle(K.search, for: [])
-            searchFoodBtn.layer.cornerRadius = 10
-            searchFoodBtn.layer.borderWidth = 2
-            searchFoodBtn.layer.borderColor = UIColor.black.cgColor
-            searchFoodBtn.setTitleColor(UIColor.black, for: [])
-            showMoreBtn.setTitle(K.foodBtnTitle, for: [])
-            showMoreBtn.layer.cornerRadius = 10
-            showMoreBtn.layer.borderWidth = 2
-            showMoreBtn.layer.borderColor = UIColor.black.cgColor
-            showMoreBtn.isHidden = true
-            titleLbl.text = K.mainTitle
-            titleLbl.font = UIFont(name: "Helvetica", size: 20)
-            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+            if traitCollection.userInterfaceStyle == .dark {
+                foodTextField.placeholder = K.searchPlaceholder
+                foodTextField.borderStyle = .roundedRect
+                foodTextField.textColor = .systemBackground
+                searchFoodBtn.setTitle(K.search, for: [])
+                searchFoodBtn.layer.cornerRadius = 10
+                searchFoodBtn.layer.borderWidth = 2
+                searchFoodBtn.setTitleColor(.label, for: [])
+                searchFoodBtn.tintColor = .systemBackground
+                showMoreBtn.setTitle(K.foodBtnTitle, for: [])
+                showMoreBtn.layer.cornerRadius = 10
+                showMoreBtn.layer.borderWidth = 2
+                if !isBtnSearchPressed {
+                    showMoreBtn.isHidden = true
+                }
+                showMoreBtn.setTitleColor(.label, for: [])
+                titleLbl.text = K.mainTitle
+                titleLbl.font = UIFont(name: "Helvetica", size: 20)
+                titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+                titleLbl.textColor = .label
+                foodTableView.backgroundColor = .systemBackground
+                showMoreBtn.layer.borderColor = UIColor.white.cgColor
+                searchFoodBtn.layer.borderColor = UIColor.white.cgColor
+                navigationController?.setNavigationBarHidden(false, animated: false)
+                navigationItem.title = K.titleFoodView
+                navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+                navigationItem.leftBarButtonItem?.tintColor = .white
+            } else {
+                foodTextField.placeholder = K.searchPlaceholder
+                foodTextField.borderStyle = .roundedRect
+                foodTextField.textColor = .systemBackground
+                searchFoodBtn.setTitle(K.search, for: [])
+                searchFoodBtn.layer.cornerRadius = 10
+                searchFoodBtn.layer.borderWidth = 2
+                searchFoodBtn.setTitleColor(.label, for: [])
+                showMoreBtn.setTitle(K.foodBtnTitle, for: [])
+                showMoreBtn.layer.cornerRadius = 10
+                showMoreBtn.layer.borderWidth = 2
+                if !isBtnSearchPressed {
+                    showMoreBtn.isHidden = true
+                }
+                showMoreBtn.setTitleColor(.label, for: [])
+                titleLbl.text = K.mainTitle
+                titleLbl.font = UIFont(name: "Helvetica", size: 20)
+                titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+                titleLbl.textColor = .label
+                searchFoodBtn.layer.borderColor = UIColor.black.cgColor
+                showMoreBtn.layer.borderColor = UIColor.black.cgColor
+                foodTableView.backgroundColor = .systemBackground
+                navigationController?.setNavigationBarHidden(false, animated: false)
+                navigationItem.title = K.titleFoodView
+                navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+                navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+                navigationItem.leftBarButtonItem?.tintColor = .black
+            }
         }
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = ""
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
-        navigationItem.leftBarButtonItem?.tintColor = .black
     }
     
     @objc func backButtonPressed() {
@@ -84,6 +155,7 @@ class FoodViewController: UIViewController {
     @IBAction func searchFoodPressed(_ sender: Any) {
         foodTextField.endEditing(true)
         food = foodTextField.text ?? ""
+        isBtnSearchPressed = true
         //When button is pressed checks if the textfield is empty or not if empty hides the textfield and presents the recipe
         //if theres a keyword 
         if food == "" {
@@ -124,15 +196,23 @@ extension FoodViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meal = mealArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.mealIdentifier, for: indexPath) as! FoodCell
-    
-        cell.foodTitleLbl.text = "Name: \(meal.strMeal ?? "" )"
-        cell.foodCategoryLbl.text = "Category: \(meal.strCategory ?? "")"
-        cell.foodCountryLbl.text = "Country: \(meal.strArea ?? "")"
-        cell.foodInstructsLbl.text = "Instructions: \n\(meal.strInstructions ?? "")"
-        cell.foodImage.image = imageFinal
-        cell.foodImage.layer.cornerRadius = 10
-        cell.isUserInteractionEnabled = false
-        
+        if isFromList {
+            cell.foodTitleLbl.isHidden = true
+            cell.foodCategoryLbl.text = "Category: \(meal.strCategory ?? "")"
+            cell.foodCountryLbl.text = "Country: \(meal.strArea ?? "")"
+            cell.foodInstructsLbl.text = "Instructions: \n\(meal.strInstructions ?? "")"
+            cell.foodImage.image = imageFinal
+            cell.foodImage.layer.cornerRadius = 10
+            cell.isUserInteractionEnabled = false
+        } else {
+            cell.foodTitleLbl.text = "Name: \(meal.strMeal ?? "" )"
+            cell.foodCategoryLbl.text = "Category: \(meal.strCategory ?? "")"
+            cell.foodCountryLbl.text = "Country: \(meal.strArea ?? "")"
+            cell.foodInstructsLbl.text = "Instructions: \n\(meal.strInstructions ?? "")"
+            cell.foodImage.image = imageFinal
+            cell.foodImage.layer.cornerRadius = 10
+            cell.isUserInteractionEnabled = false
+        }
         return cell
     }
 }

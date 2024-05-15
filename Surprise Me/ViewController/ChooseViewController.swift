@@ -23,22 +23,44 @@ class ChooseViewController: UIViewController {
     
     override func viewDidLoad() {
         styleUI()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection) //possibly lokk into this warning
         
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = K.titleFoodView
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutPressed))
-        navigationItem.rightBarButtonItem?.tintColor = .black
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            styleUI()
+        }
     }
     
     func styleUI() {
-        movieBtn.isHidden = true
-        boredBtn.isHidden = false
-        movieBtn.setTitle("Wich movie?", for: []) //For future feature
-        foodBtn.setTitle("Recipe Randomizer", for: [])
-        boredBtn.setTitle("Recipe Category", for: [])
-        movieBtn.layer.cornerRadius = 10
-        foodBtn.layer.cornerRadius = 10
-        boredBtn.layer.cornerRadius = 10
+        if traitCollection.userInterfaceStyle == .dark {
+            movieBtn.isHidden = true
+            boredBtn.isHidden = false
+            movieBtn.setTitle("Wich movie?", for: []) //For future feature
+            foodBtn.setTitle("Recipe Randomizer", for: [])
+            boredBtn.setTitle("Recipe Category", for: [])
+            movieBtn.layer.cornerRadius = 10
+            foodBtn.layer.cornerRadius = 10
+            boredBtn.layer.cornerRadius = 10
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            navigationItem.title = K.titleFoodView
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutPressed))
+            navigationItem.rightBarButtonItem?.tintColor = .white
+        } else {
+            movieBtn.isHidden = true
+            boredBtn.isHidden = false
+            movieBtn.setTitle("Wich movie?", for: []) //For future feature
+            foodBtn.setTitle("Recipe Randomizer", for: [])
+            boredBtn.setTitle("Recipe Category", for: [])
+            movieBtn.layer.cornerRadius = 10
+            foodBtn.layer.cornerRadius = 10
+            boredBtn.layer.cornerRadius = 10
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            navigationItem.title = K.titleFoodView
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutPressed))
+            navigationItem.rightBarButtonItem?.tintColor = .black
+        }
     }
     
     @objc func logOutPressed() {

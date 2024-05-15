@@ -29,23 +29,55 @@ class FoodListViewController: UIViewController {
         tableview.register(UINib(nibName: K.Identifiers.foodListCell, bundle: nil), forCellReuseIdentifier: K.Identifiers.categoryIdentifier)
     }
     
-    func styleUI() {
-        searchFieldLbl.placeholder = K.category
-        searchFieldLbl.borderStyle = .roundedRect
-        titleLbl.text = K.recipeCat
-        titleLbl.font = UIFont(name: "Helvetica", size: 20)
-        titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
-        searchBtn.setTitle(K.search, for: [])
-        searchBtn.layer.cornerRadius = 10
-        searchBtn.layer.borderWidth = 2
-        searchBtn.layer.borderColor = UIColor.black.cgColor
-        searchBtn.setTitleColor(UIColor.black, for: [])
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection) //possibly lokk into this warning
         
-        //Navigation
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = K.titleFoodView
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            styleUI()
+        }
+    }
+    
+    func styleUI() {
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            searchFieldLbl.placeholder = K.category
+            searchFieldLbl.borderStyle = .roundedRect
+            searchFieldLbl.textColor = .label
+            titleLbl.text = K.recipeCat
+            titleLbl.font = UIFont(name: "Helvetica", size: 20)
+            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+            searchBtn.setTitle(K.search, for: [])
+            searchBtn.layer.cornerRadius = 10
+            searchBtn.layer.borderWidth = 2
+            searchBtn.layer.borderColor = UIColor.white.cgColor
+            searchBtn.setTitleColor(.label, for: [])
+            
+            //Navigation
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            navigationItem.title = K.titleFoodView
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+            navigationItem.leftBarButtonItem?.tintColor = .white
+        } else {
+            searchFieldLbl.placeholder = K.category
+            searchFieldLbl.borderStyle = .roundedRect
+            searchFieldLbl.textColor = .label
+            titleLbl.text = K.recipeCat
+            titleLbl.font = UIFont(name: "Helvetica", size: 20)
+            titleLbl.font = UIFont.boldSystemFont(ofSize: 25.0)
+            searchBtn.setTitle(K.search, for: [])
+            searchBtn.layer.cornerRadius = 10
+            searchBtn.layer.borderWidth = 2
+            searchBtn.layer.borderColor = UIColor.black.cgColor
+            searchBtn.setTitleColor(.label, for: [])
+            
+            //Navigation
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            navigationItem.title = K.titleFoodView
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
+            navigationItem.leftBarButtonItem?.tintColor = .black
+        }
     }
     
     @objc func backButtonPressed() {
@@ -80,6 +112,12 @@ extension FoodListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meal = mealArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Identifiers.categoryIdentifier, for: indexPath) as! FoodListCell
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            cell.view.backgroundColor = UIColor(named: "greyColor")
+        } else {
+            cell.view.backgroundColor = .white
+        }
         
         cell.foodListLbl.text = meal.strMeal
         cell.idMeal = meal.idMeal ?? ""

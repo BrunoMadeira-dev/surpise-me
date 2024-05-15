@@ -17,6 +17,7 @@ class FoodCell: UITableViewCell {
     @IBOutlet weak var moreRecipesBtn: UIButton!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var allView: UIView!
     
     
     override func awakeFromNib() {
@@ -30,10 +31,11 @@ class FoodCell: UITableViewCell {
 //        maskLayer.path = maskPath.cgPath
 //        foodImage.layer.mask = maskLayer
         
-        foodTitleLbl.textColor = UIColor.black
-        foodCategoryLbl.textColor = UIColor.black
-        foodCountryLbl.textColor = UIColor.black
-        foodInstructsLbl.textColor = UIColor.black
+        foodTitleLbl.textColor = .label
+        foodCategoryLbl.textColor = .label
+        foodCountryLbl.textColor = .label
+        foodInstructsLbl.textColor = .label
+        allView.backgroundColor = .systemBackground
         
         view.layer.cornerRadius = 10
         view.layer.shadowOffset = CGSize(width: 2, height: 5)
