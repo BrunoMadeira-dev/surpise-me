@@ -1,0 +1,48 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/Filter.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Filter.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Filter.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Filter.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Filter.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Filter.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/GraphicsContext.swift":
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GraphicsContext.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GraphicsContext.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GraphicsContext.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GraphicsContext.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GraphicsContext.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Cache/FormatIndicatedCacheSerializer.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/FormatIndicatedCacheSerializer.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/FormatIndicatedCacheSerializer.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/FormatIndicatedCacheSerializer.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/FormatIndicatedCacheSerializer.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/FormatIndicatedCacheSerializer.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/Image.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/GIFAnimatedImage.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GIFAnimatedImage.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GIFAnimatedImage.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GIFAnimatedImage.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GIFAnimatedImage.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/GIFAnimatedImage.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Utility/DisplayLink.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DisplayLink.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DisplayLink.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DisplayLink.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DisplayLink.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DisplayLink.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Cache/DiskStorage.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DiskStorage.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DiskStorage.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DiskStorage.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DiskStorage.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/DiskStorage.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Utility/ExtensionHelpers.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ExtensionHelpers.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ExtensionHelpers.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ExtensionHelpers.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ExtensionHelpers.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ExtensionHelpers.swiftdeps"

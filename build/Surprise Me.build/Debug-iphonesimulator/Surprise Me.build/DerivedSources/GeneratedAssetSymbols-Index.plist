@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colors</key>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACColorNameGreyColor</string>
+			<key>relativePath</key>
+			<string>./greyColor.colorset</string>
+			<key>swiftSymbol</key>
+			<string>grey</string>
+		</dict>
+	</array>
+	<key>images</key>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameChecked</string>
+			<key>relativePath</key>
+			<string>./checked.imageset</string>
+			<key>swiftSymbol</key>
+			<string>checked</string>
+		</dict>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameSurpriseMeHighResolutionLogoTransparent</string>
+			<key>relativePath</key>
+			<string>./surprise-me-high-resolution-logo-transparent.imageset</string>
+			<key>swiftSymbol</key>
+			<string>surpriseMeHighResolutionLogoTransparent</string>
+		</dict>
+	</array>
+	<key>symbols</key>
+	<array/>
+</dict>
+</plist>

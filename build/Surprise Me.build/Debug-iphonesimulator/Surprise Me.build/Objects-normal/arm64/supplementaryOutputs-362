@@ -1,0 +1,18 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Networking/DataManager/FoodDataManager.swift":
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodDataManager.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodDataManager.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodDataManager.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodDataManager.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodDataManager.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/ViewController/FoodListViewController.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodListViewController.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodListViewController.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodListViewController.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodListViewController.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodListViewController.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/DataModel/EnterpriseDataModel.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/EnterpriseDataModel.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/EnterpriseDataModel.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/EnterpriseDataModel.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/EnterpriseDataModel.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/EnterpriseDataModel.dia"

@@ -1,0 +1,18 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/ViewController/ViewController.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ViewController.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ViewController.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ViewController.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ViewController.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ViewController.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/ViewController/MovieViewController.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MovieViewController.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MovieViewController.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MovieViewController.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MovieViewController.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MovieViewController.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/ViewController/ChooseViewController.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ChooseViewController.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ChooseViewController.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ChooseViewController.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ChooseViewController.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/ChooseViewController.swiftconstvalues"

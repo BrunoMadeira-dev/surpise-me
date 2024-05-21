@@ -1,0 +1,48 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/ImageProgressive.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProgressive.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProgressive.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProgressive.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProgressive.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProgressive.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Views/Indicator.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/Indicator.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/Indicator.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/Indicator.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/Indicator.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/Indicator.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Networking/ImagePrefetcher.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImagePrefetcher.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImagePrefetcher.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImagePrefetcher.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImagePrefetcher.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImagePrefetcher.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Networking/ImageModifier.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageModifier.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageModifier.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageModifier.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageModifier.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageModifier.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/ImageProcessor.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProcessor.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProcessor.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProcessor.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProcessor.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageProcessor.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/ImageTransition.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageTransition.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageTransition.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageTransition.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageTransition.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageTransition.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Extensions/ImageView+Kingfisher.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageView+Kingfisher.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageView+Kingfisher.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageView+Kingfisher.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageView+Kingfisher.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageView+Kingfisher.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Kingfisher/Sources/Image/ImageFormat.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageFormat.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageFormat.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageFormat.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageFormat.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/Objects-normal/arm64/ImageFormat.dia"

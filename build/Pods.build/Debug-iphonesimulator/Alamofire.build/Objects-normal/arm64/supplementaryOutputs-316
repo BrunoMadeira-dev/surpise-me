@@ -1,0 +1,36 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/AlamofireExtended.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AlamofireExtended.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AlamofireExtended.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AlamofireExtended.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AlamofireExtended.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AlamofireExtended.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Alamofire.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Alamofire.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Alamofire.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Alamofire.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Alamofire.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Alamofire.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/AuthenticationInterceptor.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AuthenticationInterceptor.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AuthenticationInterceptor.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AuthenticationInterceptor.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AuthenticationInterceptor.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AuthenticationInterceptor.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/CachedResponseHandler.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/CachedResponseHandler.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/CachedResponseHandler.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/CachedResponseHandler.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/CachedResponseHandler.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/CachedResponseHandler.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/AFError.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AFError.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AFError.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AFError.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AFError.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/AFError.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/Combine.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Combine.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Combine.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Combine.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Combine.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Combine.swiftconstvalues"

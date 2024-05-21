@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Debug-iphoneos/Kingfisher/Kingfisher.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Debug-iphoneos/Kingfisher/Kingfisher.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "Kingfisher-Swift.h",
+      'external-contents': "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Kingfisher.build/unextended-interface-header.h",
+    }]
+    }]
+}

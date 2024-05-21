@@ -1,0 +1,30 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/Notifications.swift":
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Notifications.d"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Notifications.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Notifications.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Notifications.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Notifications.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Extensions/OperationQueue+Alamofire.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/OperationQueue+Alamofire.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/OperationQueue+Alamofire.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/OperationQueue+Alamofire.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/OperationQueue+Alamofire.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/OperationQueue+Alamofire.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/ParameterEncoding.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoding.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoding.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoding.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoding.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoding.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/Protected.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Protected.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Protected.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Protected.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Protected.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Protected.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/ParameterEncoder.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoder.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoder.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoder.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoder.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/ParameterEncoder.o"

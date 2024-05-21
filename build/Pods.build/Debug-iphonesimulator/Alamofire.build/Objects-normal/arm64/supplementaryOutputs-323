@@ -1,0 +1,30 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/URLEncodedFormEncoder.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLEncodedFormEncoder.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLEncodedFormEncoder.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLEncodedFormEncoder.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLEncodedFormEncoder.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLEncodedFormEncoder.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Extensions/URLSessionConfiguration+Alamofire.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLSessionConfiguration+Alamofire.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLSessionConfiguration+Alamofire.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLSessionConfiguration+Alamofire.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLSessionConfiguration+Alamofire.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLSessionConfiguration+Alamofire.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Extensions/URLRequest+Alamofire.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLRequest+Alamofire.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLRequest+Alamofire.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLRequest+Alamofire.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLRequest+Alamofire.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/URLRequest+Alamofire.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/Validation.swift":
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Validation.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Validation.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Validation.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Validation.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/Validation.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/WebSocketRequest.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/WebSocketRequest.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/WebSocketRequest.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/WebSocketRequest.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/WebSocketRequest.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/arm64/WebSocketRequest.d"

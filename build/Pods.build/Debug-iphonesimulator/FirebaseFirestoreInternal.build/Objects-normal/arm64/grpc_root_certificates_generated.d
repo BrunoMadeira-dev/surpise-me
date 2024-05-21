@@ -1,0 +1,3 @@
+dependencies: \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/Pods/FirebaseFirestoreInternal/Firestore/core/src/remote/grpc_root_certificates_generated.cc \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/Pods/FirebaseFirestoreInternal/Firestore/core/src/remote/grpc_root_certificates_generated.h

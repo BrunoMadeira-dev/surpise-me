@@ -1,0 +1,18 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/ViewController/IngredientsViewController.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/IngredientsViewController.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/IngredientsViewController.swiftdeps"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/IngredientsViewController.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/IngredientsViewController.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/IngredientsViewController.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/TableViewCells/FoodCell.swift":
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCell.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCell.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCell.o"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCell.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCell.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/DataModel/MealDataModel.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MealDataModel.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MealDataModel.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MealDataModel.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MealDataModel.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/MealDataModel.swiftdeps"

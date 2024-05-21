@@ -1,0 +1,5 @@
+dependencies: \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/build/Pods.build/Debug-iphoneos/FirebaseAuth.build/module.modulemap \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserResponse.m \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/RPC/FIRSignUpNewUserResponse.h \
+  /Users/brunomadeira/Desktop/Development/Surprise\ Me/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h

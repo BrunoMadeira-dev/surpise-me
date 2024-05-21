@@ -628,7 +628,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - Alamofire (5.8.1)
+  - Alamofire (5.9.0)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -780,7 +780,9 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
+    - CLTypingLabel
     - FirebaseAppCheckInterop
     - FirebaseAuth
     - FirebaseCore
@@ -800,13 +802,10 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
-  trunk:
-    - Alamofire
-    - CLTypingLabel
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: 02b772c9910e8eba1a079227c32fbd9e46c90a24
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
   FirebaseAppCheckInterop: 58db3e9494751399cf3e7b7e3e705cff71099153

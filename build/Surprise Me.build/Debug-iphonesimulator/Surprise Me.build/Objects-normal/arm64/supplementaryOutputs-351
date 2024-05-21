@@ -1,0 +1,18 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Utils/Utils.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Utils.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Utils.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Utils.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Utils.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Utils.d"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/DataModel/FoodCategoryDataModel.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCategoryDataModel.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCategoryDataModel.d"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCategoryDataModel.o"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCategoryDataModel.dia"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/FoodCategoryDataModel.swiftconstvalues"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Surprise Me/Constants.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Constants.swiftdeps"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Constants.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Constants.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Constants.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Surprise Me.build/Debug-iphonesimulator/Surprise Me.build/Objects-normal/arm64/Constants.swiftconstvalues"

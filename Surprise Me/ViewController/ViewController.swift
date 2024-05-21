@@ -7,6 +7,7 @@
 
 import UIKit
 import CLTypingLabel
+import Security
 
 class ViewController: UIViewController {
 
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var accessLoginStackview: UIStackView!
     @IBOutlet weak var accessSigninStackview: UIStackView!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var biometricsLbl: UILabel!
+    @IBOutlet weak var biometricsSwitch: UISwitch!
+    @IBOutlet weak var biometricsStackView: UIStackView!
     
     var error = ""
     var email: String = ""
@@ -33,11 +37,18 @@ class ViewController: UIViewController {
     var signUpPressed: Bool = false
     var logInPressed: Bool = false
     var auth = UserAuthentication()
+    let bioMetricManager = BiometricAuthManager.shared
+    var keyChain = KeyChainInfoViewController()
+    var isBiometricsTapped: Bool = false
+    var isLoggedIn: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        isLoggedIn = UserDefaults.standard.bool(forKey: "allowBiometrics")
         stileUI()
+        let canUseBiometrics = bioMetricManager.canUseBiometricAuthentication()
+        biometricsSwitch.isEnabled = canUseBiometrics
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +56,7 @@ class ViewController: UIViewController {
         
         logInStackView.isHidden = true
         signInStackview.isHidden = true
+        biometricsStackView.isHidden = true
         accessLoginStackview.isHidden = true
         accessSigninStackview.isHidden = true
     }
@@ -54,6 +66,8 @@ class ViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         logInStackView.isHidden = true
         signInStackview.isHidden = true
+        biometricsStackView.isHidden = true
+        biometricsLbl.text = "Biometrics"
         
         //Buttons style
         startBtn.layer.cornerRadius = 20
@@ -73,7 +87,17 @@ class ViewController: UIViewController {
         signInPassword.placeholder = "Password"
         signInPassword.isSecureTextEntry = true
         
+        if isLoggedIn {
+            if let credentials = keyChain.retrieveCredentials() {
+                logInEmail.text = credentials.username
+                logInPassword.text = credentials.password
+                email = credentials.username
+                password = credentials.password
+                biometricsSwitch.isOn = isLoggedIn
+            }
+        }
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segue.entersSegue {
@@ -94,15 +118,19 @@ class ViewController: UIViewController {
                 self.logInBtn.isUserInteractionEnabled = false
                 self.logInPressed = true
                 self.accessLoginStackview.isHidden = false
+                self.biometricsStackView.isHidden = false
             }
         } else {
             UIView.animate(withDuration: 0.3) {
                 self.accessSigninStackview.isHidden = true
                 self.signInStackview.isHidden = true
+                self.biometricsStackView.isHidden = true
             }
             UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
                 self.logInStackView.isHidden = false
                 self.accessLoginStackview.isHidden = false
+                self.biometricsStackView.isHidden = false
+                self.biometricsStackView.layoutIfNeeded()
                 self.accessSigninStackview.layoutIfNeeded()
                 self.signInStackview.layoutIfNeeded()
             } completion: { _ in
@@ -144,10 +172,12 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.accessLoginStackview.isHidden = true
             self.logInStackView.isHidden = true
+            self.biometricsStackView.isHidden = true
         }
         UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
             self.accessLoginStackview.layoutIfNeeded()
             self.logInStackView.layoutIfNeeded()
+            self.biometricsStackView.layoutIfNeeded()
         } completion: { _ in
             self.logInPressed = false
             self.logInBtn.isUserInteractionEnabled = true
@@ -155,23 +185,54 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acceptLoginPressed(_ sender: Any) {
-        let error = checkFields()
-        if error != "" {
-            let alert = Utils().showPopup(title: K.warning, message: error)
-            present(alert, animated: true)
-        } else {
-            auth.userAuthLogin(email: email, password: password) { success, error  in
-                if error != nil {
-                    let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                    self.present(alert, animated: true)
-                } else if success {
-                    self.logInEmail.text = ""
-                    self.logInPassword.text = ""
-                    self.logInBtn.isUserInteractionEnabled = true
-                    self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+            if isLoggedIn {
+                bioMetricManager.authenticateWithBiometrics { success, error in
+                    if success {
+                        self.auth.userAuthLogin(email: self.email, password: self.password) { success, error in
+                            if error != nil {
+                                let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
+                                self.present(alert, animated: true)
+                            } else if success {
+                                self.signInEmail.text = ""
+                                self.signInPassword.text = ""
+                                self.startBtn.isUserInteractionEnabled = true
+                                self.logInBtn.isUserInteractionEnabled = true
+                                self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                            }
+                        }
+                    } else {
+                        let alert = Utils().showPopup(title: "Error", message: "Could not authenticate")
+                        self.present(alert, animated: true)
+                    }
+                }
+            } else {
+                let error = checkFields()
+                if error != "" {
+                    let alert = Utils().showPopup(title: K.warning, message: error)
+                    present(alert, animated: true)
+                } else {
+                    auth.userAuthLogin(email: email, password: password) { success, error  in
+                        if error != nil {
+                            let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
+                            self.present(alert, animated: true)
+                        } else if success {
+                            self.keyChain.saveCredentials(username: self.email, password: self.password)
+                            self.logInEmail.text = ""
+                            self.logInPassword.text = ""
+                            self.startBtn.isUserInteractionEnabled = true
+                            self.logInBtn.isUserInteractionEnabled = true
+                            self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                        }
+                    }
                 }
             }
-        }
+    }
+    
+    
+    @IBAction func biometricsTapped(_ sender: Any) {
+        
+        isBiometricsTapped = !UserDefaults.standard.bool(forKey: "allowBiometrics")
+        UserDefaults.standard.set(isBiometricsTapped, forKey: "allowBiometrics")
     }
     
     //MARK: Procceed Signin
@@ -201,6 +262,7 @@ class ViewController: UIViewController {
                     let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
                     self.present(alert, animated: true)
                 } else if success {
+                    self.keyChain.saveCredentials(username: self.email, password: self.password)
                     self.signInEmail.text = ""
                     self.signInPassword.text = ""
                     self.startBtn.isUserInteractionEnabled = true

@@ -44,10 +44,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dth-7u-ays">
-                                <rect key="frame" x="20" y="450" width="165" height="460"/>
+                                <rect key="frame" x="20" y="450" width="165" height="549"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-Rs-5ix">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="220"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="309"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-4d-S3I">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
@@ -110,10 +110,27 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="S6E-DD-2Ni">
+                                                <rect key="frame" x="0.0" y="240" width="165" height="69"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-T5-wQZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="69"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lse-Rk-9wG">
+                                                        <rect key="frame" x="116" y="0.0" width="51" height="69"/>
+                                                        <connections>
+                                                            <action selector="biometricsTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="jNY-bn-mdX"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cRL-vR-eyM">
-                                        <rect key="frame" x="0.0" y="240" width="165" height="220"/>
+                                        <rect key="frame" x="0.0" y="329" width="165" height="220"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-2q-PPL">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
@@ -203,6 +220,9 @@
                     <connections>
                         <outlet property="accessLoginStackview" destination="PQW-55-izf" id="N9Z-gM-PRQ"/>
                         <outlet property="accessSigninStackview" destination="Lpz-hA-Wqy" id="DBc-Ft-zKt"/>
+                        <outlet property="biometricsLbl" destination="nAR-T5-wQZ" id="X89-gO-gO6"/>
+                        <outlet property="biometricsStackView" destination="S6E-DD-2Ni" id="NSg-dn-v9j"/>
+                        <outlet property="biometricsSwitch" destination="lse-Rk-9wG" id="PhF-Zw-x5T"/>
                         <outlet property="btnAcceptLogin" destination="adY-cg-cED" id="T8F-xA-vOd"/>
                         <outlet property="btnAcceptSignin" destination="mIg-kx-ECg" id="y26-WS-Jh9"/>
                         <outlet property="btnCancelLogin" destination="vzb-2K-VIR" id="oqv-8N-5hG"/>
@@ -710,7 +730,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

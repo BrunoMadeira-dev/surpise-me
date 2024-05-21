@@ -1,0 +1,30 @@
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/Request.swift":
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/Request.d"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/Request.o"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/Request.swiftconstvalues"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/Request.dia"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/Request.swiftdeps"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/RequestInterceptor.swift":
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestInterceptor.swiftdeps"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestInterceptor.swiftconstvalues"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestInterceptor.d"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestInterceptor.dia"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestInterceptor.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Core/RequestTaskMap.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestTaskMap.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestTaskMap.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestTaskMap.dia"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestTaskMap.d"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestTaskMap.o"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/RequestCompression.swift":
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestCompression.swiftconstvalues"
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestCompression.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestCompression.d"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestCompression.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RequestCompression.dia"
+"/Users/brunomadeira/Desktop/Development/Surprise Me/Pods/Alamofire/Source/Features/RedirectHandler.swift":
+  object: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RedirectHandler.o"
+  dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RedirectHandler.d"
+  const-values: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RedirectHandler.swiftconstvalues"
+  swift-dependencies: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RedirectHandler.swiftdeps"
+  diagnostics: "/Users/brunomadeira/Desktop/Development/Surprise Me/build/Pods.build/Debug-iphoneos/Alamofire.build/Objects-normal/arm64/RedirectHandler.dia"
