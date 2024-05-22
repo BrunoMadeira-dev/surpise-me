@@ -47,6 +47,8 @@ class ChooseViewController: UIViewController {
             navigationItem.title = K.titleFoodView
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutPressed))
             navigationItem.rightBarButtonItem?.tintColor = .white
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .black
         } else {
             movieBtn.isHidden = true
             boredBtn.isHidden = false
@@ -60,6 +62,8 @@ class ChooseViewController: UIViewController {
             navigationItem.title = K.titleFoodView
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutPressed))
             navigationItem.rightBarButtonItem?.tintColor = .black
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .white
         }
     }
     
@@ -69,26 +73,30 @@ class ChooseViewController: UIViewController {
                 let alert = Utils().showPopup(title: "Alert", message: error?.localizedDescription ?? "There was an error!")
                 self.present(alert, animated: true)
             } else {
-                self.dismiss(animated: true, completion: nil)
+                if let window = UIApplication.shared.windows.first {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    window.rootViewController = loginVC
+                    self.present(loginVC, animated: true)
+                }
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segue.foodSegue {
-            if let destinationVC = segue.destination as? FoodViewController {
-                
-                let navVC = UINavigationController(rootViewController: destinationVC)
-                navVC.modalPresentationStyle = .fullScreen
-                present(navVC, animated: true, completion: nil)
-            }
+//                if let navController = self.tabBarController?.selectedViewController as? UINavigationController {
+//                    if let destinationVC = storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
+//                        navController.pushViewController(destinationVC, animated: true)
+//                    }
+//                }
         } else if segue.identifier == K.Segue.foodListSegue {
-            if let destinationVC = segue.destination as? FoodListViewController {
-                
-                let navVC = UINavigationController(rootViewController: destinationVC)
-                navVC.modalPresentationStyle = .fullScreen
-                present(navVC, animated: true, completion: nil)
-            }
+//            if let destinationVC = segue.destination as? FoodListViewController {
+//                
+//                let navVC = UINavigationController(rootViewController: destinationVC)
+//                navVC.modalPresentationStyle = .fullScreen
+//                present(navVC, animated: true, completion: nil)
+//            }
         }
     }
     
@@ -97,11 +105,19 @@ class ChooseViewController: UIViewController {
     }
     
     @IBAction func randomizerPressed(_ sender: Any) {
-        performSegue(withIdentifier: K.Segue.foodSegue, sender: nil)
+        if let navController = self.tabBarController?.selectedViewController as? UINavigationController {
+            if let destinationVC = storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
+                navController.pushViewController(destinationVC, animated: true)
+            }
+        }
     }
 
     @IBAction func foodListPressed(_ sender: Any) {
-        performSegue(withIdentifier: K.Segue.foodListSegue, sender: nil)
+        if let navController = self.tabBarController?.selectedViewController as? UINavigationController {
+            if let destinationVC = storyboard?.instantiateViewController(identifier: "FoodListViewController") as? FoodListViewController {
+                navController.pushViewController(destinationVC, animated: true)
+            }
+        }
     }
     
 }

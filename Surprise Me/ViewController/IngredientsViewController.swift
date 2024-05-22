@@ -96,6 +96,9 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
             navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
             navigationItem.leftBarButtonItem?.tintColor = .white
+            
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .black
         } else {
             ingredientsLbl.text = "Ingredients"
             ingredientsLbl.font = UIFont(name: "Helvetica", size: 20)
@@ -106,6 +109,9 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
             navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
             navigationItem.leftBarButtonItem?.tintColor = .black
+            
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .white
         }
     }
     

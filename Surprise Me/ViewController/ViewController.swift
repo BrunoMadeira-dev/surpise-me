@@ -99,15 +99,15 @@ class ViewController: UIViewController {
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segue.entersSegue {
-            if let destVC = segue.destination as? ChooseViewController {
-                let navVC = UINavigationController(rootViewController: destVC)
-                navVC.modalPresentationStyle = .fullScreen
-                present(navVC, animated: true, completion: nil)
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == K.Segue.entersSegue {
+//            if let destVC = segue.destination as? ChooseViewController {
+//                let navVC = UINavigationController(rootViewController: destVC)
+//                navVC.modalPresentationStyle = .fullScreen
+//                present(navVC, animated: true, completion: nil)
+//            }
+//        }
+//    }
 
     @IBAction func logInPressed(_ sender: Any) {
         //Quando pressiono este botão mostra os campos e os botões de acesso. Enquanto não pressiono não faz nada e esconde tudo o resto
@@ -197,7 +197,9 @@ class ViewController: UIViewController {
                                 self.signInPassword.text = ""
                                 self.startBtn.isUserInteractionEnabled = true
                                 self.logInBtn.isUserInteractionEnabled = true
-                                self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                                //self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                                
+                                self.tabbarLogin()
                             }
                         }
                     } else {
@@ -221,11 +223,40 @@ class ViewController: UIViewController {
                             self.logInPassword.text = ""
                             self.startBtn.isUserInteractionEnabled = true
                             self.logInBtn.isUserInteractionEnabled = true
-                            self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                            //self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
+                            
+                            self.tabbarLogin()
                         }
                     }
                 }
             }
+    }
+    
+    func tabbarLogin() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let homeVC = storyboard.instantiateViewController(identifier: "ChooseViewController") as! ChooseViewController
+        homeVC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        
+        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
+        let favoritesVC = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
+        favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        
+        let homeNavController = UINavigationController(rootViewController: homeVC)
+        let profileNavController = UINavigationController(rootViewController: profileVC)
+        let favoritesNavController = UINavigationController(rootViewController: favoritesVC)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeNavController, profileNavController, favoritesNavController]
+        
+        
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+        }
     }
     
     

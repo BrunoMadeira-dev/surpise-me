@@ -58,6 +58,9 @@ class FoodListViewController: UIViewController {
             navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
             navigationItem.leftBarButtonItem?.tintColor = .white
+            
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .black
         } else {
             searchFieldLbl.placeholder = K.category
             searchFieldLbl.borderStyle = .roundedRect
@@ -77,11 +80,13 @@ class FoodListViewController: UIViewController {
             navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
             navigationItem.leftBarButtonItem?.tintColor = .black
+            tabBarController?.tabBar.isTranslucent = false
+            tabBarController?.tabBar.backgroundColor = .white
         }
     }
     
     @objc func backButtonPressed() {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func searchPressed(_ sender: Any) {

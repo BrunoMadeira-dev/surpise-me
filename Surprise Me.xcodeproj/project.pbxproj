@@ -14,6 +14,8 @@
 		546742552BDFB6D50002C083 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546742542BDFB6D40002C083 /* IngredientsCell.swift */; };
 		546742572BDFB6E50002C083 /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546742562BDFB6E40002C083 /* IngredientsCell.xib */; };
 		5467425E2BE047180002C083 /* Ingredients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5467425F2BE047180002C083 /* Ingredients.storyboard */; };
+		54D1CF902BFE627100D62768 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1CF8F2BFE627100D62768 /* ProfileViewController.swift */; };
+		54D1CF922BFE62B700D62768 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D1CF912BFE62B700D62768 /* FavoritesViewController.swift */; };
 		54D62D122B8D2D2100AE21BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D112B8D2D2100AE21BD /* AppDelegate.swift */; };
 		54D62D142B8D2D2100AE21BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D132B8D2D2100AE21BD /* SceneDelegate.swift */; };
 		54D62D162B8D2D2100AE21BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D62D152B8D2D2100AE21BD /* ViewController.swift */; };
@@ -85,6 +87,8 @@
 		546742542BDFB6D40002C083 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
 		546742562BDFB6E40002C083 /* IngredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
 		5467425F2BE047180002C083 /* Ingredients.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ingredients.storyboard; sourceTree = "<group>"; };
+		54D1CF8F2BFE627100D62768 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		54D1CF912BFE62B700D62768 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		54D62D0E2B8D2D2100AE21BD /* Surprise Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D62D112B8D2D2100AE21BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D62D132B8D2D2100AE21BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 				54D62D642B98ED7300AE21BD /* FoodListViewController.swift */,
 				5438209B2BFCB83600520292 /* BiometricAuthManager.swift */,
 				5438209D2BFCDF3C00520292 /* KeyChainInfoViewController.swift */,
+				54D1CF8F2BFE627100D62768 /* ProfileViewController.swift */,
+				54D1CF912BFE62B700D62768 /* FavoritesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				54D62D162B8D2D2100AE21BD /* ViewController.swift in Sources */,
 				54D62D4D2B90925D00AE21BD /* MovieViewController.swift in Sources */,
 				54D62D422B8E8CD900AE21BD /* ChooseViewController.swift in Sources */,
+				54D1CF902BFE627100D62768 /* ProfileViewController.swift in Sources */,
 				546741E72BC9E6810002C083 /* UserAuthentication.swift in Sources */,
 				54D62D512B91195F00AE21BD /* FoodViewController.swift in Sources */,
 				546742552BDFB6D50002C083 /* IngredientsCell.swift in Sources */,
@@ -571,6 +578,7 @@
 				5438209A2BF825A900520292 /* BiometricAuthManager.swift in Sources */,
 				54D62D142B8D2D2100AE21BD /* SceneDelegate.swift in Sources */,
 				54D62D452B8FAEB200AE21BD /* NetworkingCall.swift in Sources */,
+				54D1CF922BFE62B700D62768 /* FavoritesViewController.swift in Sources */,
 				54D62D692B98EFBA00AE21BD /* FoodListCell.swift in Sources */,
 				5438209E2BFCDF3C00520292 /* KeyChainInfoViewController.swift in Sources */,
 			);

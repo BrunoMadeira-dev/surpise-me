@@ -146,7 +146,8 @@ class FoodViewController: UIViewController {
     
     @objc func backButtonPressed() {
         if !isFromList {
-            dismiss(animated: true)
+            //dismiss(animated: true)
+            navigationController?.popViewController(animated: true)
         } else {
             navigationController?.popViewController(animated: true)
         }
