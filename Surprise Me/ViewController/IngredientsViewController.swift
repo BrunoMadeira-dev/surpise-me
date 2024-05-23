@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class IngredientsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IngredientsViewController: UIViewController {
     
     @IBOutlet weak var ingredientsTable: UITableView!
     @IBOutlet weak var ingredientsLbl: UILabel!
@@ -40,48 +40,6 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             styleUI()
         }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingridientsData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ingredientsTable.dequeueReusableCell(withIdentifier: K.Identifiers.ingridientIdentifier, for: indexPath) as! IngredientsCell
-        cell.viewCell.layer.cornerRadius = 10
-        cell.viewCell.layer.shadowOffset = CGSize(width: 2, height: 5)
-        cell.viewCell.layer.shadowOpacity = 0.7
-        cell.viewCell.layer.shadowRadius = 5
-        
-        if traitCollection.userInterfaceStyle == .dark {
-            cell.viewCell.backgroundColor = UIColor(named: "greyColor")
-        } else {
-            cell.viewCell.backgroundColor = .white
-        }
-        
-        let key = Array(ingredientsAndMeasures.keys)
-        let value = Array(ingredientsAndMeasures.values)
-        cell.checkImage.image = UIImage(named: "checked")
-        
-        if ingridientsData[indexPath.row].isSelected {
-            cell.checkImage.isHidden = false
-        } else {
-            cell.checkImage.isHidden = true
-            
-        }
-        
-        cell.ingridientLbl.text = "\(key[indexPath.row]) - \(value[indexPath.row])"
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = ingredientsTable.dequeueReusableCell(withIdentifier: K.Identifiers.ingridientIdentifier, for: indexPath) as! IngredientsCell
-        ingredientsTable.deselectRow(at: indexPath, animated: true)
-        
-        ingridientsData[indexPath.row].isSelected = !ingridientsData[indexPath.row].isSelected
-        
-        ingredientsTable.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func styleUI() {
@@ -117,6 +75,52 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func backButtonPressed() {
             navigationController?.popViewController(animated: true)
+    }
+}
+
+
+//MARK: Table View Extension
+extension IngredientsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingridientsData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ingredientsTable.dequeueReusableCell(withIdentifier: K.Identifiers.ingridientIdentifier, for: indexPath) as! IngredientsCell
+        cell.viewCell.layer.cornerRadius = 10
+        cell.viewCell.layer.shadowOffset = CGSize(width: 2, height: 5)
+        cell.viewCell.layer.shadowOpacity = 0.7
+        cell.viewCell.layer.shadowRadius = 5
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            cell.viewCell.backgroundColor = UIColor(named: "greyColor")
+        } else {
+            cell.viewCell.backgroundColor = .white
+        }
+        
+        let key = Array(ingredientsAndMeasures.keys)
+        let value = Array(ingredientsAndMeasures.values)
+        cell.checkImage.image = UIImage(named: "checked")
+        
+        if ingridientsData[indexPath.row].isSelected {
+            cell.checkImage.isHidden = false
+        } else {
+            cell.checkImage.isHidden = true
+            
+        }
+        
+        cell.ingridientLbl.text = "\(key[indexPath.row]) - \(value[indexPath.row])"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        ingredientsTable.deselectRow(at: indexPath, animated: true)
+        
+        ingridientsData[indexPath.row].isSelected = !ingridientsData[indexPath.row].isSelected
+        
+        ingredientsTable.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 

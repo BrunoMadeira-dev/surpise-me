@@ -113,6 +113,8 @@ class FoodViewController: UIViewController {
                 navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
                 navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
                 navigationItem.leftBarButtonItem?.tintColor = .white
+                tabBarController?.tabBar.isTranslucent = false
+                tabBarController?.tabBar.backgroundColor = .black
             } else {
                 foodTextField.placeholder = K.searchPlaceholder
                 foodTextField.borderStyle = .roundedRect
@@ -140,6 +142,8 @@ class FoodViewController: UIViewController {
                 navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
                 navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonPressed))
                 navigationItem.leftBarButtonItem?.tintColor = .black
+                tabBarController?.tabBar.isTranslucent = false
+                tabBarController?.tabBar.backgroundColor = .white
             }
         }
     }
@@ -267,7 +271,6 @@ extension FoodViewController {
                         self.showMoreBtn.isHidden = false
                     }
                 }
-
             } else {
                 Utils().hideProgressPopUp(view: self.view)
                 print("Error obtaining an answer")

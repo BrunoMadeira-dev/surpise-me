@@ -237,13 +237,15 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let homeVC = storyboard.instantiateViewController(identifier: "ChooseViewController") as! ChooseViewController
-        homeVC.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        homeVC.tabBarItem = UITabBarItem(title: "Choose", image: UIImage(systemName: "house"), tag: 0)
+
         
         let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 1)
+        
         
         let favoritesVC = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
-        favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star"), tag: 2)
         
         let homeNavController = UINavigationController(rootViewController: homeVC)
         let profileNavController = UINavigationController(rootViewController: profileVC)

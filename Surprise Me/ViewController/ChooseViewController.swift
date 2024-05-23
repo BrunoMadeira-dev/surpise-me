@@ -18,9 +18,6 @@ class ChooseViewController: UIViewController {
     let networker = NetworkingCall()
     let auth = UserAuthentication()
     
-    //MARK: take this url
-    //let url = "https://corporatebs-generator.sameerkumar.website/" //mock url jus to test
-    
     override func viewDidLoad() {
         styleUI()
     }
