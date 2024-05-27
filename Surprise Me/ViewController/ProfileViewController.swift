@@ -16,5 +16,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         
         profile.text = "Profile View!!!"
+        
+        stileUI()
+    }
+    
+    func stileUI() {
+        //Navigation
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.title = K.titleFoodView
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.label]
     }
 }

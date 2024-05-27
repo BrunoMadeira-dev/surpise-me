@@ -20,6 +20,7 @@ class ChooseViewController: UIViewController {
     
     override func viewDidLoad() {
         styleUI()
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

@@ -46,7 +46,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         isLoggedIn = UserDefaults.standard.bool(forKey: "allowBiometrics")
-        stileUI()
+        styleUI()
+        buttonColors()
         let canUseBiometrics = bioMetricManager.canUseBiometricAuthentication()
         biometricsSwitch.isEnabled = canUseBiometrics
     }
@@ -61,7 +62,15 @@ class ViewController: UIViewController {
         accessSigninStackview.isHidden = true
     }
     
-    func stileUI() {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection) //possibly lokk into this warning
+        
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            buttonColors()
+        }
+    }
+    
+    func styleUI() {
         logoImage.image = UIImage(named: "surprise-me-high-resolution-logo-transparent")
         navigationItem.backButtonTitle = ""
         logInStackView.isHidden = true
@@ -70,13 +79,23 @@ class ViewController: UIViewController {
         biometricsLbl.text = "Biometrics"
         
         //Buttons style
-        startBtn.layer.cornerRadius = 20
+        startBtn.layer.cornerRadius = 12
         startBtn.setTitle("Sign Up", for: [])
-        logInBtn.layer.cornerRadius = 20
+        startBtn.backgroundColor = UIColor(named: "lightBlueColor")
+        logInBtn.layer.cornerRadius = 12
         logInBtn.setTitle("Log In", for: [])
+        logInBtn.backgroundColor = UIColor(named: "lightBlueColor")
+    
         btnAcceptLogin.setTitle("Log In", for: [])
+        btnAcceptLogin.backgroundColor = UIColor(named: "lightBlueColor")
+        btnAcceptLogin.layer.cornerRadius = 8
+        
         btnCancelLogin.setTitle("Cancel", for: [])
+        btnCancelLogin.setTitleColor(.label, for: [])
+        
         btnAcceptSignin.setTitle("Sign In", for: [])
+        btnAcceptSignin.backgroundColor = UIColor(named: "lightBlueColor")
+        btnAcceptLogin.layer.cornerRadius = 8
         btnCancelSignin.setTitle("Cancel", for: [])
         
         //Textfields styles
@@ -95,6 +114,15 @@ class ViewController: UIViewController {
                 password = credentials.password
                 biometricsSwitch.isOn = isLoggedIn
             }
+        }
+    }
+    
+    func buttonColors() {
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            btnAcceptLogin.setTitleColor(.white, for: [])
+        } else {
+            btnAcceptLogin.setTitleColor(.black, for: [])
         }
     }
 
@@ -153,6 +181,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 self.accessLoginStackview.isHidden = true
                 self.logInStackView.isHidden = true
+                self.biometricsStackView.isHidden = true
             }
             UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
                 self.signInStackview.isHidden = false
@@ -185,6 +214,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func acceptLoginPressed(_ sender: Any) {
+        error = ""
             if isLoggedIn {
                 bioMetricManager.authenticateWithBiometrics { success, error in
                     if success {
@@ -235,16 +265,18 @@ class ViewController: UIViewController {
     func tabbarLogin() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboardProfile = UIStoryboard(name: "Profile", bundle: nil)
+        let storyboardFavorites = UIStoryboard(name: "Favorites", bundle: nil)
         
         let homeVC = storyboard.instantiateViewController(identifier: "ChooseViewController") as! ChooseViewController
         homeVC.tabBarItem = UITabBarItem(title: "Choose", image: UIImage(systemName: "house"), tag: 0)
 
         
-        let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        let profileVC = storyboardProfile.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 1)
         
         
-        let favoritesVC = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
+        let favoritesVC = storyboardFavorites.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
         favoritesVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "star"), tag: 2)
         
         let homeNavController = UINavigationController(rootViewController: homeVC)

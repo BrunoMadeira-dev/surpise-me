@@ -129,7 +129,7 @@ extension FoodListViewController: UITableViewDelegate, UITableViewDataSource {
         if let image = imageArray[indexPath.row] {
             cell.foodImageList.image = image
         } else {
-            cell.foodImageList.image = UIImage(systemName: "pencil.circle")
+            cell.foodImageList.image = UIImage(systemName: "popcorn.fill")
         }
         
         return cell
