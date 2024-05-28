@@ -12,7 +12,7 @@ target 'Surprise Me' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'MBProgressHUD'
-  pod 'FirebaseAuth'
+  pod 'Firebase/Auth'
   pod 'FirebaseFirestore'
   pod 'IQKeyboardManager'
 

@@ -8,6 +8,8 @@
 import UIKit
 import CLTypingLabel
 import Security
+import FirebaseAuth
+
 
 class ViewController: UIViewController {
 
@@ -122,7 +124,7 @@ class ViewController: UIViewController {
         if traitCollection.userInterfaceStyle == .dark {
             btnAcceptLogin.setTitleColor(.white, for: [])
         } else {
-            btnAcceptLogin.setTitleColor(.black, for: [])
+            btnAcceptLogin.setTitleColor(.white, for: [])
         }
     }
 
@@ -220,15 +222,12 @@ class ViewController: UIViewController {
                     if success {
                         self.auth.userAuthLogin(email: self.email, password: self.password) { success, error in
                             if error != nil {
-                                let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                                self.present(alert, animated: true)
+                                self.handleAuthError(error!, isLogin: true)
                             } else if success {
                                 self.signInEmail.text = ""
                                 self.signInPassword.text = ""
                                 self.startBtn.isUserInteractionEnabled = true
                                 self.logInBtn.isUserInteractionEnabled = true
-                                //self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
-                                
                                 self.tabbarLogin()
                             }
                         }
@@ -244,23 +243,97 @@ class ViewController: UIViewController {
                     present(alert, animated: true)
                 } else {
                     auth.userAuthLogin(email: email, password: password) { success, error  in
-                        if error != nil {
-                            let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                            self.present(alert, animated: true)
+                        if let error = error {
+                            self.handleAuthError(error, isLogin: true)
                         } else if success {
                             self.keyChain.saveCredentials(username: self.email, password: self.password)
                             self.logInEmail.text = ""
                             self.logInPassword.text = ""
                             self.startBtn.isUserInteractionEnabled = true
                             self.logInBtn.isUserInteractionEnabled = true
-                            //self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
-                            
                             self.tabbarLogin()
                         }
                     }
                 }
             }
     }
+    
+    @IBAction func acceptSigninPressed(_ sender: Any) {
+        let error = checkFields()
+        if error != "" {
+            let alert = Utils().showPopup(title: K.warning, message: error)
+            present(alert, animated: true)
+        } else {
+            auth.userAuthCreate(email: email, password: password) { success, error in
+                if let error = error {
+                    self.handleAuthError(error, isLogin: false)
+                } else if success {
+                    self.keyChain.saveCredentials(username: self.email, password: self.password)
+                    self.signInEmail.text = ""
+                    self.signInPassword.text = ""
+                    self.startBtn.isUserInteractionEnabled = true
+                    self.tabbarLogin()
+                }
+            }
+        }
+    }
+    
+    @IBAction func biometricsTapped(_ sender: Any) {
+        
+        isBiometricsTapped = !UserDefaults.standard.bool(forKey: "allowBiometrics")
+        UserDefaults.standard.set(isBiometricsTapped, forKey: "allowBiometrics")
+    }
+    
+    //MARK: Procceed Signin
+    
+    @IBAction func cancelSigninPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.3) {
+            self.signInStackview.isHidden = true
+            self.accessSigninStackview.isHidden = true
+        }
+        UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
+            self.accessSigninStackview.layoutIfNeeded()
+            self.signInStackview.layoutIfNeeded()
+        } completion: { _ in
+            self.signUpPressed = false
+            self.startBtn.isUserInteractionEnabled = true
+        }
+    }
+    
+    func handleAuthError(_ error: Error, isLogin: Bool) {
+        let authError = error as NSError
+        var message: String = "There was an error. Please try again"
+        
+        if let codeError = AuthErrorCode.Code(rawValue: authError.code) {
+            if isLogin {
+                switch codeError {
+                case .invalidCredential :
+                    message = "The email or password are incorrect. Please try again!"
+                default :
+                    message = "Error \(error.localizedDescription)"
+                }
+            } else {
+                switch codeError {
+                case .emailAlreadyInUse :
+                    message = "Email already in use. Please provide other email."
+                case .userNotFound :
+                    message = "There is no account for this email. Please provide another email."
+                case .weakPassword :
+                    message = "Password needs to be greater than six characters. Please provide another"
+                case .invalidEmail :
+                    message = "Email is badly formatted. Please provide another"
+                case .wrongPassword :
+                    message = "Password is incorrect. Please try again"
+                default :
+                    message = "Error \(error.localizedDescription)"
+                }
+            }
+        }
+        
+        let alert = Utils().showPopup(title: "Error", message: message)
+        self.present(alert, animated: true)
+    }
+
     
     func tabbarLogin() {
         
@@ -290,50 +363,6 @@ class ViewController: UIViewController {
         if let window = UIApplication.shared.windows.first {
             window.rootViewController = tabBarController
             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
-        }
-    }
-    
-    
-    @IBAction func biometricsTapped(_ sender: Any) {
-        
-        isBiometricsTapped = !UserDefaults.standard.bool(forKey: "allowBiometrics")
-        UserDefaults.standard.set(isBiometricsTapped, forKey: "allowBiometrics")
-    }
-    
-    //MARK: Procceed Signin
-    
-    @IBAction func cancelSigninPressed(_ sender: Any) {
-        UIView.animate(withDuration: 0.3) {
-            self.signInStackview.isHidden = true
-            self.accessSigninStackview.isHidden = true
-        }
-        UIView.animate(withDuration: 0.4, delay: -0.4, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.8) {
-            self.accessSigninStackview.layoutIfNeeded()
-            self.signInStackview.layoutIfNeeded()
-        } completion: { _ in
-            self.signUpPressed = false
-            self.startBtn.isUserInteractionEnabled = true
-        }
-    }
-    
-    @IBAction func acceptSigninPressed(_ sender: Any) {
-        let error = checkFields()
-        if error != "" {
-            let alert = Utils().showPopup(title: K.warning, message: error)
-            present(alert, animated: true)
-        } else {
-            auth.userAuthCreate(email: email, password: password) { success, error in
-                if error != nil {
-                    let alert = Utils().showPopup(title: K.warning, message: error?.localizedDescription ?? "There was an error")
-                    self.present(alert, animated: true)
-                } else if success {
-                    self.keyChain.saveCredentials(username: self.email, password: self.password)
-                    self.signInEmail.text = ""
-                    self.signInPassword.text = ""
-                    self.startBtn.isUserInteractionEnabled = true
-                    self.performSegue(withIdentifier: K.Segue.entersSegue, sender: nil)
-                }
-            }
         }
     }
     

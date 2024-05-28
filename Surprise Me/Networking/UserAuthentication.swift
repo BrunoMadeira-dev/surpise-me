@@ -15,7 +15,6 @@ class UserAuthentication {
         
         Auth.auth().createUser(withEmail: email, password: password) { response, error in
             if error != nil {
-                
                 print(error)
                 onComplete(false, error)
             } else {
@@ -27,7 +26,7 @@ class UserAuthentication {
     func userAuthLogin(email: String, password: String, onComplete: @escaping(Bool, Error?) -> ()) {
         
         Auth.auth().signIn(withEmail: email, password: password) { authResponse, error in
-            if error != nil {
+            if let error = error {
                 print(error)
                 onComplete(false, error)
             } else {
