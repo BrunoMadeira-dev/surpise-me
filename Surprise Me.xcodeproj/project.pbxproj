@@ -172,6 +172,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5469FD832C072F1A005F848C /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		54D62D052B8D2D2100AE21BD = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +262,7 @@
 		54D62D4B2B90923100AE21BD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5469FD832C072F1A005F848C /* Alerts */,
 				54D62D152B8D2D2100AE21BD /* ViewController.swift */,
 				54D62D412B8E8CD900AE21BD /* ChooseViewController.swift */,
 				54D62D4C2B90925D00AE21BD /* MovieViewController.swift */,

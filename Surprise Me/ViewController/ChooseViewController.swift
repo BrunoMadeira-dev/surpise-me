@@ -68,8 +68,7 @@ class ChooseViewController: UIViewController {
     @objc func logOutPressed() {
         auth.userAuthLogOut { success, error in
             if error != nil {
-                let alert = Utils().showPopup(title: "Alert", message: error?.localizedDescription ?? "There was an error!")
-                self.present(alert, animated: true)
+                Utils().showPopUp(title: "Alert", message: error?.localizedDescription ?? "There was an error!")
             } else {
                 if let window = UIApplication.shared.windows.first {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)

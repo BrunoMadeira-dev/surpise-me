@@ -15,6 +15,7 @@ target 'Surprise Me' do
   pod 'Firebase/Auth'
   pod 'FirebaseFirestore'
   pod 'IQKeyboardManager'
+  pod 'SCLAlertView'
 
   target 'Surprise MeTests' do
     inherit! :search_paths

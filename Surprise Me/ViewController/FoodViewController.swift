@@ -245,9 +245,7 @@ extension FoodViewController {
         Utils().showProgressPopUp(view: self.view)
         FoodDataManager().fetchRandomFood(url: url) { responseObject, error in
             if let error = error {
-                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
-                self.present(alert, animated: true)
-                print(error)
+                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 Utils().hideProgressPopUp(view: self.view)
             }
             if let safeResp = responseObject {
@@ -260,9 +258,7 @@ extension FoodViewController {
                 print(self.ingredientsAndMeasures.count)
                 FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data, error in
                     if error != nil {
-                        let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error?.localizedDescription.description ?? "Erro!")")
-                        self.present(alert, animated: true)
-                        print(error ?? "erro")
+                        Utils().showPopUp(title: K.warning, message: "There was an error in image processing: \(error!.localizedDescription.description)")
                         Utils().hideProgressPopUp(view: self.view)
                     } else {
                         self.imageFinal = data!

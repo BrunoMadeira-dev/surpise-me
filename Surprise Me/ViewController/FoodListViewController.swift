@@ -61,6 +61,7 @@ class FoodListViewController: UIViewController {
             
             tabBarController?.tabBar.isTranslucent = false
             tabBarController?.tabBar.backgroundColor = .black
+            tableview.reloadData()
         } else {
             searchFieldLbl.placeholder = K.category
             searchFieldLbl.borderStyle = .roundedRect
@@ -82,6 +83,7 @@ class FoodListViewController: UIViewController {
             navigationItem.leftBarButtonItem?.tintColor = .black
             tabBarController?.tabBar.isTranslucent = false
             tabBarController?.tabBar.backgroundColor = .white
+            tableview.reloadData()
         }
     }
     
@@ -94,8 +96,7 @@ class FoodListViewController: UIViewController {
         let category = searchFieldLbl.text ?? ""
         if category == "" {
             DispatchQueue.main.async {
-                let alert = Utils().showPopup(title: K.warning, message: K.phrases.notEmpty)
-                self.present(alert, animated: true)
+                Utils().showPopUp(title: K.warning, message: K.phrases.notEmpty)
             }
         } else {
             let url = "\(K.foodCategoryURL)\(category)"
@@ -151,9 +152,7 @@ extension FoodListViewController {
         FoodDataManager().fetchCategory(url: url) { responseObject, error in
             
             if let error = error {
-                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
-                self.present(alert, animated: true)
-                print(error)
+                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
             } else {
                 Utils().showProgressPopUp(view: self.view)
                 var count = 0
@@ -170,9 +169,7 @@ extension FoodListViewController {
                                 self.imageArray.append(image.image)  // Know its correct image its a UIImage?
                             case .failure(let error):
                                 //Displays a warning with a message from the api
-                                let alert = Utils().showPopup(title: K.warning, message: "There was an error in image processing: \(error.localizedDescription.description)")
-                                self.present(alert, animated: true)
-                                print(error)
+                                Utils().showPopUp(title: K.warning, message: "There was an error obtaining the images: \(error.localizedDescription.description)")
                             }
                             //only do tableview.reload after both arrays are equal
                             if self.imageArray.count == self.mealArray.count {
@@ -193,9 +190,7 @@ extension FoodListViewController {
     func fetchRecipeFromTable(url: String, imageData: UIImage) {
         FoodDataManager().fetchById(url: url) { responseObject, error in
             if let error = error {
-                let alert = Utils().showPopup(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
-                self.present(alert, animated: true)
-                print(error)
+                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 Utils().hideProgressPopUp(view: self.view)
             } else {
                 Utils().showProgressPopUp(view: self.view)

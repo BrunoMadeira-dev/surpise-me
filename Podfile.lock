@@ -1108,6 +1108,7 @@ PODS:
   - nanopb/encode (2.30910.0)
   - PromisesObjC (2.4.0)
   - RecaptchaInterop (100.0.0)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - Alamofire
@@ -1117,6 +1118,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Kingfisher
   - MBProgressHUD
+  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -1144,6 +1146,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   abseil: d121da9ef7e2ff4cab7666e76c5a3e0915ae08c3
@@ -1170,7 +1173,8 @@ SPEC CHECKSUMS:
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 8f710b0a67a8101e2a8ee5c1edeb33d3c2b5f9a1
+PODFILE CHECKSUM: b777dd557b60555bcbe30349ac1c51d58e74268c
 
 COCOAPODS: 1.14.3

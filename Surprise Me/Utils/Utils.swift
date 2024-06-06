@@ -8,15 +8,29 @@
 import Foundation
 import UIKit
 import MBProgressHUD
+import SCLAlertView
 
 class Utils {
     
-    func showPopup(title: String, message: String) -> UIAlertController {
-        
-        let warning: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-        return warning
-    }
+    static let shared = Utils()
+    
+    static func getTopViewController() -> UIViewController? {
+            var topViewController: UIViewController?
+            if let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first {
+                topViewController = window.rootViewController
+                while let presentedViewController = topViewController?.presentedViewController {
+                    topViewController = presentedViewController
+                }
+            }
+            return topViewController
+        }
+    
+//    func showPopup(title: String, message: String) -> UIAlertController {
+//        
+//        let warning: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        warning.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+//        return warning
+//    }
     
     func showProgressPopUp(view: UIView) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
@@ -26,4 +40,20 @@ class Utils {
     func hideProgressPopUp(view: UIView) {
         MBProgressHUD.hide(for: view, animated: true)
     }
+    
+    func showPopUp(title: String, message: String) {
+        let alert = SCLAlertView()
+            
+        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: "warning")!, closeButtonTitle: "OK")
+    }
+    
+    func showPopUpWithHandler(title: String, message: String, okHandle: @escaping () -> ()) {
+        let alert = SCLAlertView()
+            
+        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: "warning")!, closeButtonTitle: "OK").setDismissBlock {
+            
+            okHandle()
+        }
+    }
+
 }

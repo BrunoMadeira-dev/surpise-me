@@ -232,15 +232,13 @@ class ViewController: UIViewController {
                             }
                         }
                     } else {
-                        let alert = Utils().showPopup(title: "Error", message: "Could not authenticate")
-                        self.present(alert, animated: true)
+                        Utils().showPopUp(title: "Error", message: "Could not authenticate")
                     }
                 }
             } else {
                 let error = checkFields()
                 if error != "" {
-                    let alert = Utils().showPopup(title: K.warning, message: error)
-                    present(alert, animated: true)
+                    Utils().showPopUp(title: K.warning, message: error)
                 } else {
                     auth.userAuthLogin(email: email, password: password) { success, error  in
                         if let error = error {
@@ -261,8 +259,7 @@ class ViewController: UIViewController {
     @IBAction func acceptSigninPressed(_ sender: Any) {
         let error = checkFields()
         if error != "" {
-            let alert = Utils().showPopup(title: K.warning, message: error)
-            present(alert, animated: true)
+            Utils().showPopUp(title: K.warning, message: error)
         } else {
             auth.userAuthCreate(email: email, password: password) { success, error in
                 if let error = error {
@@ -330,8 +327,7 @@ class ViewController: UIViewController {
             }
         }
         
-        let alert = Utils().showPopup(title: "Error", message: message)
-        self.present(alert, animated: true)
+        Utils().showPopUp(title: "Error", message: message)
     }
 
     
@@ -367,6 +363,7 @@ class ViewController: UIViewController {
     }
     
     func checkFields() -> String {
+        error = ""
         if signUpPressed {
             if signInEmail.text != "" || signInPassword.text != "" || signInEmail.text != "" || signInPassword.text != "" {
                 email = signInEmail.text!
