@@ -11,6 +11,8 @@
 		5438209E2BFCDF3C00520292 /* KeyChainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5438209D2BFCDF3C00520292 /* KeyChainInfoViewController.swift */; };
 		544BE9DD2C011A9100F906AE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544BE9DC2C011A9100F906AE /* Profile.storyboard */; };
 		544BE9DF2C01235D00F906AE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544BE9DE2C01235D00F906AE /* Favorites.storyboard */; };
+		544DC7762C12400700F35A72 /* CustomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544DC7752C12400700F35A72 /* CustomPopUpViewController.swift */; };
+		544DC7782C12402600F35A72 /* CustomPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544DC7772C12402600F35A72 /* CustomPopUpViewController.xib */; };
 		546741E52BC9E1100002C083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546741E42BC9E1100002C083 /* GoogleService-Info.plist */; };
 		546741E72BC9E6810002C083 /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546741E62BC9E6810002C083 /* UserAuthentication.swift */; };
 		546742552BDFB6D50002C083 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546742542BDFB6D40002C083 /* IngredientsCell.swift */; };
@@ -86,6 +88,8 @@
 		5438209D2BFCDF3C00520292 /* KeyChainInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainInfoViewController.swift; sourceTree = "<group>"; };
 		544BE9DC2C011A9100F906AE /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		544BE9DE2C01235D00F906AE /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		544DC7752C12400700F35A72 /* CustomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUpViewController.swift; sourceTree = "<group>"; };
+		544DC7772C12402600F35A72 /* CustomPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPopUpViewController.xib; sourceTree = "<group>"; };
 		546741E42BC9E1100002C083 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		546741E62BC9E6810002C083 /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		546742542BDFB6D40002C083 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		5469FD832C072F1A005F848C /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				544DC7752C12400700F35A72 /* CustomPopUpViewController.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				5467425F2BE047180002C083 /* Ingredients.storyboard */,
 				544BE9DC2C011A9100F906AE /* Profile.storyboard */,
 				544BE9DE2C01235D00F906AE /* Favorites.storyboard */,
+				544DC7772C12402600F35A72 /* CustomPopUpViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				544BE9DD2C011A9100F906AE /* Profile.storyboard in Resources */,
 				5467425E2BE047180002C083 /* Ingredients.storyboard in Resources */,
 				546741E52BC9E1100002C083 /* GoogleService-Info.plist in Resources */,
+				544DC7782C12402600F35A72 /* CustomPopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544DC7762C12400700F35A72 /* CustomPopUpViewController.swift in Sources */,
 				54D62D632B9774EE00AE21BD /* IngredientsViewController.swift in Sources */,
 				54D62D4F2B91178400AE21BD /* MealDataModel.swift in Sources */,
 				54D62D5E2B96656100AE21BD /* FoodCell.swift in Sources */,

@@ -44,16 +44,25 @@ class Utils {
     func showPopUp(title: String, message: String) {
         let alert = SCLAlertView()
             
-        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: "warning")!, closeButtonTitle: "OK")
+        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: K.Symbols.attentionSymbol)!, closeButtonTitle: "OK")
     }
     
     func showPopUpWithHandler(title: String, message: String, okHandle: @escaping () -> ()) {
         let alert = SCLAlertView()
             
-        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: "warning")!, closeButtonTitle: "OK").setDismissBlock {
+        alert.showCustom(title, subTitle: message, color: UIColor(named: "lightBlueColor")!, icon: UIImage(named: K.Symbols.attentionSymbol)!, closeButtonTitle: "OK").setDismissBlock {
             
             okHandle()
         }
+    }
+    
+    func showCustomPopUp(title: String, message: String, handle: @escaping () -> ()) {
+        
+        let alert: CustomPopUpViewController = CustomPopUpViewController(title: title, message: message) {
+            handle()
+        }
+        
+        Utils.getTopViewController()?.present(alert, animated: true, completion: nil)
     }
 
 }

@@ -50,4 +50,9 @@ struct K {
         static let ingridients = "Ingredients"
         static let customFoodCell = "FooCell"
     }
+    
+    struct Symbols {
+        
+        static let attentionSymbol = "attention"
+    }
 }

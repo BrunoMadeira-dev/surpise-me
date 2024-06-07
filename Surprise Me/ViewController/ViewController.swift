@@ -327,7 +327,14 @@ class ViewController: UIViewController {
             }
         }
         
-        Utils().showPopUp(title: "Error", message: message)
+        //Utils().showPopUp(title: "Error", message: message)
+        
+        DispatchQueue.main.async {
+            
+            Utils().showCustomPopUp(title: K.warning, message: message) {
+                print("Handle touched!!")
+            }
+        }
     }
 
     
