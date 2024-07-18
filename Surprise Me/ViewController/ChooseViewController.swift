@@ -68,7 +68,7 @@ class ChooseViewController: UIViewController {
     @objc func logOutPressed() {
         auth.userAuthLogOut { success, error in
             if error != nil {
-                Utils().showPopUp(title: "Alert", message: error?.localizedDescription ?? "There was an error!")
+                Utils().showCustomPopUp(title: K.warning, message: error?.localizedDescription ?? "There was an error!")
             } else {
                 if let window = UIApplication.shared.windows.first {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -77,23 +77,6 @@ class ChooseViewController: UIViewController {
                     self.present(loginVC, animated: true)
                 }
             }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segue.foodSegue {
-//                if let navController = self.tabBarController?.selectedViewController as? UINavigationController {
-//                    if let destinationVC = storyboard?.instantiateViewController(identifier: "FoodViewController") as? FoodViewController {
-//                        navController.pushViewController(destinationVC, animated: true)
-//                    }
-//                }
-        } else if segue.identifier == K.Segue.foodListSegue {
-//            if let destinationVC = segue.destination as? FoodListViewController {
-//                
-//                let navVC = UINavigationController(rootViewController: destinationVC)
-//                navVC.modalPresentationStyle = .fullScreen
-//                present(navVC, animated: true, completion: nil)
-//            }
         }
     }
     

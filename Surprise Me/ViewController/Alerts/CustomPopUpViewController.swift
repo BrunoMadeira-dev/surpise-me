@@ -80,6 +80,9 @@ class CustomPopUpViewController: UIViewController {
         btnOK.backgroundColor = UIColor(named: "lightBlueColor")
         btnOK.layer.cornerRadius = 12
         
+        popUpTitleLbl.font = UIFont.boldSystemFont(ofSize: 16)
+        popUpTitleLbl.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        
         alertImage.image = UIImage(named: K.Symbols.attentionSymbol)
         alertImage.tintColor = .label
     }

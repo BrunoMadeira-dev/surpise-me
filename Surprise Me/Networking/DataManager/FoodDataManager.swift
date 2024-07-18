@@ -31,7 +31,7 @@ class FoodDataManager{
                 onComplete(nil, error)
             }
             if let safeData = data {
-                onComplete(data, nil)
+                onComplete(safeData, nil)
             }
         }
     }

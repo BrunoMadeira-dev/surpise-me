@@ -96,7 +96,7 @@ class FoodListViewController: UIViewController {
         let category = searchFieldLbl.text ?? ""
         if category == "" {
             DispatchQueue.main.async {
-                Utils().showPopUp(title: K.warning, message: K.phrases.notEmpty)
+                Utils().showCustomPopUp(title: K.warning, message: K.phrases.notEmpty)
             }
         } else {
             let url = "\(K.foodCategoryURL)\(category)"
@@ -152,7 +152,7 @@ extension FoodListViewController {
         FoodDataManager().fetchCategory(url: url) { responseObject, error in
             
             if let error = error {
-                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
+                Utils().showCustomPopUp(title: K.warning, message: error.localizedDescription)
             } else {
                 Utils().showProgressPopUp(view: self.view)
                 var count = 0
@@ -170,6 +170,7 @@ extension FoodListViewController {
                             case .failure(let error):
                                 //Displays a warning with a message from the api
                                 Utils().showPopUp(title: K.warning, message: "There was an error obtaining the images: \(error.localizedDescription.description)")
+                                Utils().showCustomPopUp(title: K.warning, message: "There was an error obtaining the images: \(error.localizedDescription.description)")
                             }
                             //only do tableview.reload after both arrays are equal
                             if self.imageArray.count == self.mealArray.count {
@@ -190,7 +191,7 @@ extension FoodListViewController {
     func fetchRecipeFromTable(url: String, imageData: UIImage) {
         FoodDataManager().fetchById(url: url) { responseObject, error in
             if let error = error {
-                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
+                Utils().showCustomPopUp(title: K.warning, message:"There was an error \(error.localizedDescription)" ?? "There was an error!")
                 Utils().hideProgressPopUp(view: self.view)
             } else {
                 Utils().showProgressPopUp(view: self.view)

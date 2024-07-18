@@ -57,6 +57,7 @@ class IngredientsViewController: UIViewController {
             
             tabBarController?.tabBar.isTranslucent = false
             tabBarController?.tabBar.backgroundColor = .black
+            ingredientsTable.reloadData()
         } else {
             ingredientsLbl.text = "Ingredients"
             ingredientsLbl.font = UIFont(name: "Helvetica", size: 20)
@@ -70,6 +71,7 @@ class IngredientsViewController: UIViewController {
             
             tabBarController?.tabBar.isTranslucent = false
             tabBarController?.tabBar.backgroundColor = .white
+            ingredientsTable.reloadData()
         }
     }
     

@@ -56,11 +56,18 @@ class Utils {
         }
     }
     
-    func showCustomPopUp(title: String, message: String, handle: @escaping () -> ()) {
+    func showCustomPopUpWithHandler(title: String, message: String, handle: @escaping () -> ()) {
         
         let alert: CustomPopUpViewController = CustomPopUpViewController(title: title, message: message) {
             handle()
         }
+        
+        Utils.getTopViewController()?.present(alert, animated: true, completion: nil)
+    }
+    
+    func showCustomPopUp(title: String, message: String) {
+        
+        let alert: CustomPopUpViewController = CustomPopUpViewController(title: title, message: message)
         
         Utils.getTopViewController()?.present(alert, animated: true, completion: nil)
     }

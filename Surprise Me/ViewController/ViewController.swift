@@ -232,13 +232,13 @@ class ViewController: UIViewController {
                             }
                         }
                     } else {
-                        Utils().showPopUp(title: "Error", message: "Could not authenticate")
+                        Utils().showCustomPopUp(title: K.warning, message: "Could not authenticate")
                     }
                 }
             } else {
                 let error = checkFields()
                 if error != "" {
-                    Utils().showPopUp(title: K.warning, message: error)
+                    Utils().showCustomPopUp(title: K.warning, message: error)
                 } else {
                     auth.userAuthLogin(email: email, password: password) { success, error  in
                         if let error = error {
@@ -326,15 +326,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-        //Utils().showPopUp(title: "Error", message: message)
-        
-        DispatchQueue.main.async {
-            
-            Utils().showCustomPopUp(title: K.warning, message: message) {
-                print("Handle touched!!")
-            }
-        }
+        Utils().showCustomPopUp(title: K.warning, message: message)
     }
 
     

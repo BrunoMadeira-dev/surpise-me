@@ -51,6 +51,7 @@ class FoodViewController: UIViewController {
         if isFromList {
             if traitCollection.userInterfaceStyle == .dark {
                 foodTextField.isHidden = true
+                foodTextField.textColor = .label
                 searchFoodBtn.isHidden = true
                 showMoreBtn.isHidden = false
                 showMoreBtn.setTitle(K.foodBtnTitle, for: [])
@@ -68,6 +69,7 @@ class FoodViewController: UIViewController {
                 navigationItem.leftBarButtonItem?.tintColor = .white
             } else {
                 foodTextField.isHidden = true
+                foodTextField.textColor = .label
                 searchFoodBtn.isHidden = true
                 showMoreBtn.isHidden = false
                 showMoreBtn.setTitle(K.foodBtnTitle, for: [])
@@ -88,7 +90,7 @@ class FoodViewController: UIViewController {
             if traitCollection.userInterfaceStyle == .dark {
                 foodTextField.placeholder = K.searchPlaceholder
                 foodTextField.borderStyle = .roundedRect
-                foodTextField.textColor = .systemBackground
+                foodTextField.textColor = .label
                 searchFoodBtn.setTitle(K.search, for: [])
                 searchFoodBtn.layer.cornerRadius = 10
                 searchFoodBtn.layer.borderWidth = 2
@@ -118,7 +120,7 @@ class FoodViewController: UIViewController {
             } else {
                 foodTextField.placeholder = K.searchPlaceholder
                 foodTextField.borderStyle = .roundedRect
-                foodTextField.textColor = .systemBackground
+                foodTextField.textColor = .label
                 searchFoodBtn.setTitle(K.search, for: [])
                 searchFoodBtn.layer.cornerRadius = 10
                 searchFoodBtn.layer.borderWidth = 2
@@ -245,7 +247,7 @@ extension FoodViewController {
         Utils().showProgressPopUp(view: self.view)
         FoodDataManager().fetchRandomFood(url: url) { responseObject, error in
             if let error = error {
-                Utils().showPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
+                Utils().showCustomPopUp(title: K.warning, message: "There was an error: \(error.localizedDescription.description)")
                 Utils().hideProgressPopUp(view: self.view)
             }
             if let safeResp = responseObject {
@@ -258,7 +260,7 @@ extension FoodViewController {
                 print(self.ingredientsAndMeasures.count)
                 FoodDataManager().fetchImage(url: safeResp.meals[0].strMealThumb ?? "") { data, error in
                     if error != nil {
-                        Utils().showPopUp(title: K.warning, message: "There was an error in image processing: \(error!.localizedDescription.description)")
+                        Utils().showCustomPopUp(title: K.warning, message:"There was an error in image processing: \(error?.localizedDescription)" ?? "There was an error!")
                         Utils().hideProgressPopUp(view: self.view)
                     } else {
                         self.imageFinal = data!
